@@ -564,10 +564,28 @@ function doRegister() {
   var pass = document.getElementById('reg-pass').value;
   if (!email || !pass) return toast('Isi email dan password','err');
   if (pass.length < 6) return toast('Password minimal 6 karakter','err');
+
   sb.auth.signUp({ email: email, password: pass }).then(function(result) {
     if (result.error) return toast(result.error.message, 'err');
-    toast('Registrasi berhasil, silakan login','ok');
-    sb.auth.signOut(); showPage('page-login');
+    // Setelah signup berhasil, user otomatis login (karena email confirmation dimatikan)
+    // Sekarang buat profil manual
+    var isAdmin = email === 'adeali490@gmail.com';
+    return sb.from('profiles').insert({
+      id: result.data.user.id,
+      email: email,
+      role: isAdmin ? 'admin' : 'user',
+      is_active: isAdmin ? true : false
+    });
+  }).then(function(result) {
+    if (result && result.error) {
+      console.error('Gagal buat profil:', result.error);
+      toast('Akun terbuat tapi profil gagal dibuat. Hubungi Admin.','err');
+    } else {
+      toast('Registrasi berhasil, silakan login','ok');
+    }
+    // Logout otomatis, arahkan ke halaman login
+    sb.auth.signOut();
+    showPage('page-login');
   });
 }
 

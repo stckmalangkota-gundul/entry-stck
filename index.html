@@ -19,76 +19,66 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
 .page{display:none}.page.active{display:block}
 .font-arial{font-family:Arial,sans-serif}
 
-/* Toast */
 #toast-box{position:fixed;top:16px;right:16px;z-index:9999;display:flex;flex-direction:column;gap:8px;pointer-events:none}
 .toast-item{padding:12px 20px;border-radius:10px;color:#fff;font-size:14px;font-weight:500;animation:slideIn .3s ease,fadeOut .4s ease 2.6s forwards;box-shadow:0 4px 20px rgba(0,0,0,.15);pointer-events:auto}
 .toast-ok{background:#2D6A4F}.toast-err{background:#C1292E}.toast-info{background:#8B5E3C}
 @keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
 @keyframes fadeOut{to{opacity:0;transform:translateY(-10px)}}
 
-/* Spinner */
 .spinner-btn{display:inline-flex;align-items:center;border:1px solid #D4C5B3;border-radius:8px;overflow:hidden;background:#fff}
-.spinner-btn input { border:none; outline:none; text-align:center; font-family:Arial,sans-serif; font-size:14px; font-weight:700; padding:8px 4px; min-width:100px; background:transparent; text-transform:none; }
+.spinner-btn input{border:none;outline:none;text-align:center;font-family:Arial,sans-serif;font-size:14px;font-weight:700;padding:8px 4px;min-width:100px;background:transparent;text-transform:none}
 .spinner-btn button{border:none;background:#F5EDE4;padding:8px 12px;cursor:pointer;font-size:18px;line-height:1;transition:background .15s}
-.spinner-btn button:hover{background:#E8DDD0}.spinner-btn button:active{background:#D4C5B3}
+.spinner-btn button:hover{background:#E8DDD0}
+.spinner-btn button:active{background:#D4C5B3}
 
-/* Card */
 .card-entry{background:#fff;border:1px solid #E8DDD0;border-radius:12px;padding:14px;cursor:pointer;transition:all .2s}
 .card-entry:hover{border-color:#8B5E3C;box-shadow:0 4px 16px rgba(139,94,60,.12);transform:translateY(-2px)}
 .card-entry.selected{border-color:#6B4226;background:#FFF8F0;box-shadow:0 0 0 2px #8B5E3C}
 .card-queue{background:#fff;border:1px solid #E8DDD0;border-radius:10px;padding:12px}
 
-/* Scroll */
 .scroll-h{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.scroll-h::-webkit-scrollbar{height:6px}.scroll-h::-webkit-scrollbar-thumb{background:#D4C5B3;border-radius:3px}
+.scroll-h::-webkit-scrollbar{height:6px}
+.scroll-h::-webkit-scrollbar-thumb{background:#D4C5B3;border-radius:3px}
 
-/* Input global */
-.inp { width:100%; padding:10px 12px; border:1px solid #D4C5B3; border-radius:8px; font-family:Arial,sans-serif;
-    font-size:14px; background:#fff; outline:none; transition:border-color .2s; }
-/* Hanya input di dalam section Entry Form yang kapital */
-#entry-form-fields .inp,
-#entry-form-fields .spinner-btn input { text-transform: uppercase; }
+.inp{width:100%;padding:10px 12px;border:1px solid #D4C5B3;border-radius:8px;font-family:Arial,sans-serif;font-size:14px;background:#fff;outline:none;transition:border-color .2s}
 .inp:focus{border-color:#8B5E3C}
-.inp-label{font-size:11px;font-weight:600;color:#6B4226;margin-bottom:4px;display:block;letter-spacing:.3px}
 .inp[readonly]{background:#F5EDE4;cursor:default}
+#entry-form-fields .inp,
+#entry-form-fields .spinner-btn input{text-transform:uppercase}
 
-/* Buttons */
 .btn-primary{background:#6B4226;color:#fff;font-weight:600;border:none;border-radius:10px;padding:12px 24px;cursor:pointer;transition:all .2s;font-size:15px}
 .btn-primary:hover{background:#4A2E1A;transform:translateY(-1px);box-shadow:0 4px 16px rgba(74,46,26,.3)}
-.btn-primary:active{transform:translateY(0)}.btn-primary:disabled{background:#D4C5B3;cursor:not-allowed;transform:none;box-shadow:none}
+.btn-primary:active{transform:translateY(0)}
+.btn-primary:disabled{background:#D4C5B3;cursor:not-allowed;transform:none;box-shadow:none}
 .btn-outline{background:transparent;color:#6B4226;font-weight:600;border:2px solid #8B5E3C;border-radius:10px;padding:10px 20px;cursor:pointer;transition:all .2s;font-size:14px}
-.btn-outline:hover{background:#6B4226;color:#fff}.btn-outline:disabled{opacity:.4;cursor:not-allowed}
+.btn-outline:hover{background:#6B4226;color:#fff}
+.btn-outline:disabled{opacity:.4;cursor:not-allowed}
 .btn-sm{padding:6px 14px;font-size:12px;border-radius:6px}
 .btn-danger{background:#C1292E;color:#fff;font-weight:600;border:none;border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px;transition:background .2s}
 .btn-danger:hover{background:#8B0000}
 
-/* Section */
 .section-box{background:#fff;border:1px solid #E8DDD0;border-radius:14px;padding:18px;margin-bottom:16px}
 .section-title{font-size:16px;font-weight:700;color:#4A2E1A;margin-bottom:12px;display:flex;align-items:center;gap:8px}
 
-/* Pulse */
 .pulse-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
 .pulse-dot.green{background:#2D6A4F;animation:pulse 1.5s infinite}
 .pulse-dot.red{background:#C1292E;animation:pulse 1.5s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
 
-/* PIN inputs */
 .pin-box{width:48px;height:58px;text-align:center;font-size:24px;font-weight:800;font-family:Arial,sans-serif;border:2px solid #D4C5B3;border-radius:12px;outline:none;background:#fff;transition:all .2s;color:#2D1B0E;text-transform:none}
 .pin-box:focus{border-color:#6B4226;box-shadow:0 0 0 3px rgba(107,66,38,.15)}
 .pin-box.error{border-color:#C1292E;animation:shake .4s ease}
 @keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
-
-/* Stagger animasi PIN */
 .pin-box{opacity:0;animation:pinIn .3s ease forwards}
 .pin-box:nth-child(1){animation-delay:.05s}.pin-box:nth-child(2){animation-delay:.1s}
 .pin-box:nth-child(3){animation-delay:.15s}.pin-box:nth-child(4){animation-delay:.2s}.pin-box:nth-child(5){animation-delay:.25s}
 @keyframes pinIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
-/* Loading spinner */
 .spin-load{width:20px;height:20px;border:3px solid #D4C5B3;border-top-color:#6B4226;border-radius:50%;animation:spin .7s linear infinite;display:inline-block;vertical-align:middle}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-/* ======== PRINT STYLES ======== */
+.inp-label{font-size:11px;font-weight:600;color:#6B4226;margin-bottom:4px;display:block;letter-spacing:.3px}
+
 @media print{
   body *{visibility:hidden!important}
   #print-area,#print-area *{visibility:visible!important}
@@ -129,7 +119,12 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
         <label class="inp-label">EMAIL</label>
         <input type="email" id="login-email" class="inp mb-3" placeholder="Masukkan email" autocomplete="email">
         <label class="inp-label">PASSWORD</label>
-        <input type="password" id="login-pass" class="inp mb-4" placeholder="Masukkan password" autocomplete="current-password">
+        <div class="relative mb-4">
+          <input type="password" id="login-pass" class="inp pr-11" placeholder="Masukkan password" autocomplete="current-password">
+          <button type="button" onclick="togglePw('login-pass',this)" class="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-bark-400 hover:text-bark-700 transition-colors" tabindex="-1" aria-label="Tampilkan password">
+            <span class="material-symbols-outlined" style="font-size:22px">visibility_off</span>
+          </button>
+        </div>
         <button id="btn-login" class="btn-primary w-full" onclick="doLogin()">MASUK</button>
       </div>
       <p class="text-center text-sm text-bark-400 mt-5">
@@ -151,7 +146,12 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
         <label class="inp-label">EMAIL</label>
         <input type="email" id="reg-email" class="inp mb-3" placeholder="Masukkan email" autocomplete="email">
         <label class="inp-label">PASSWORD</label>
-        <input type="password" id="reg-pass" class="inp mb-4" placeholder="Buat password (min. 6 karakter)" autocomplete="new-password">
+        <div class="relative mb-4">
+          <input type="password" id="reg-pass" class="inp pr-11" placeholder="Buat password (min. 6 karakter)" autocomplete="new-password">
+          <button type="button" onclick="togglePw('reg-pass',this)" class="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-bark-400 hover:text-bark-700 transition-colors" tabindex="-1" aria-label="Tampilkan password">
+            <span class="material-symbols-outlined" style="font-size:22px">visibility_off</span>
+          </button>
+        </div>
         <button id="btn-reg" class="btn-primary w-full" onclick="doRegister()">DAFTAR</button>
       </div>
       <p class="text-center text-sm text-bark-400 mt-5">
@@ -170,16 +170,12 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
       </div>
       <h2 class="text-xl font-extrabold text-bark-800 mb-2">Verifikasi 2 Langkah</h2>
       <p class="text-sm text-bark-400 mb-6">Kode PIN 5 digit telah dikirim ke email Anda.<br>Masukkan PIN untuk melanjutkan login.</p>
-
       <div class="flex justify-center gap-3 mb-2" id="pin-inputs"></div>
-
       <p id="pin-error" class="text-sm text-red-600 font-semibold mb-2 hidden"></p>
       <p id="pin-info" class="text-sm text-bark-400 mb-5 min-h-[20px]"><span class="spin-load"></span> Mengirim PIN...</p>
-
       <button id="btn-resend-pin" onclick="resendPIN()" class="btn-outline w-full mb-3 hidden" disabled>
         Kirim Ulang PIN (<span id="resend-timer">60</span>)
       </button>
-
       <button onclick="cancelPIN()" class="text-sm text-bark-400 hover:text-bark-600 underline">Kembali ke Login</button>
     </div>
   </div>
@@ -192,10 +188,7 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
       <span class="font-extrabold text-bark-800 text-lg">Entry-STCK</span>
       <span id="role-badge" class="text-xs font-bold px-2 py-0.5 rounded-full bg-bark-500 text-white hidden">ADMIN</span>
     </div>
-    <div class="flex items-center gap-3">
-      <span id="user-email-display" class="text-xs text-bark-400 hidden sm:inline"></span>
-      <button onclick="doLogout()" class="btn-outline btn-sm">Logout</button>
-    </div>
+    <span id="user-email-display" class="text-xs text-bark-400 hidden sm:inline"></span>
   </div>
   <div class="max-w-2xl mx-auto px-4 py-4">
 
@@ -204,10 +197,11 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
       <div class="pulse-dot red mx-auto mb-4"></div>
       <p class="font-bold text-lg text-bark-800 mb-1">Status: Non-Aktif</p>
       <p class="text-sm text-bark-400 mb-6">Hubungi Admin untuk Aktivasi</p>
-      <a id="wa-link" href="#" target="_blank" class="btn-primary inline-flex items-center gap-2">
+      <a id="wa-link" href="#" target="_blank" class="btn-primary inline-flex items-center gap-2 mb-6">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.4 0-4.637-.828-6.403-2.218l-.447-.354-2.638.885.885-2.638-.354-.447A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
         Hubungi Admin
       </a>
+      <button onclick="doLogout()" class="btn-outline w-full">Logout</button>
     </div>
 
     <!-- CONTENT AKTIF -->
@@ -215,7 +209,10 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
 
       <!-- FILTER -->
       <div class="section-box">
-        <div class="section-title"><span class="material-symbols-outlined text-bark-500" style="font-size:20px">filter_list</span>Filter Pencarian</div>
+        <div class="section-title">
+          <span class="material-symbols-outlined text-bark-500" style="font-size:20px">filter_list</span>
+          Filter Pencarian
+        </div>
         <div class="mb-3">
           <label class="inp-label">CARI RENTANG TANGGAL</label>
           <div class="flex gap-2 items-center">
@@ -246,32 +243,50 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
       <!-- HISTORY -->
       <div class="section-box">
         <div class="section-title justify-between">
-          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-bark-500" style="font-size:20px">history</span>List Histori</div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-bark-500" style="font-size:20px">history</span>
+            List Histori
+          </div>
           <div class="flex items-center gap-2">
             <span id="history-count" class="text-xs font-bold bg-sand-200 text-bark-600 px-2 py-0.5 rounded-full">0</span>
-            <button id="btn-export" onclick="exportSheet()" class="btn-outline btn-sm hidden"><span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">download</span> Export</button>
+            <button id="btn-export" onclick="exportSheet()" class="btn-outline btn-sm hidden">
+              <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">download</span> Export
+            </button>
           </div>
         </div>
-        <div id="history-list" class="scroll-h flex gap-3 pb-2" style="min-height:60px"><p class="text-sm text-bark-400 py-4 text-center w-full">Belum ada histori</p></div>
+        <div id="history-list" class="scroll-h flex gap-3 pb-2" style="min-height:60px">
+          <p class="text-sm text-bark-400 py-4 text-center w-full">Belum ada histori</p>
+        </div>
       </div>
 
       <!-- ENTRY FORM -->
       <div class="section-box">
-        <div class="section-title"><span class="material-symbols-outlined text-bark-500" style="font-size:20px">edit_note</span>Entry Data Baru</div>
+        <div class="section-title">
+          <span class="material-symbols-outlined text-bark-500" style="font-size:20px">edit_note</span>
+          Entry Data Baru
+        </div>
         <div id="entry-form-fields" class="space-y-3"></div>
         <button id="btn-simpan-antrian" onclick="simpanKeAntrian()" class="btn-primary w-full mt-4">SIMPAN KE ANTRIAN</button>
       </div>
 
       <!-- PRINT QUEUE -->
       <div class="section-box">
-        <div class="section-title"><span class="material-symbols-outlined text-bark-500" style="font-size:20px">print</span>List Antrian Print</div>
-        <div id="queue-list" class="space-y-3" style="min-height:40px"><p class="text-sm text-bark-400 py-2 text-center">Antrian kosong</p></div>
+        <div class="section-title">
+          <span class="material-symbols-outlined text-bark-500" style="font-size:20px">print</span>
+          List Antrian Print
+        </div>
+        <div id="queue-list" class="space-y-3" style="min-height:40px">
+          <p class="text-sm text-bark-400 py-2 text-center">Antrian kosong</p>
+        </div>
       </div>
 
       <!-- ADMIN PANEL -->
       <div id="sec-admin" class="hidden">
         <div class="section-box">
-          <div class="section-title"><span class="material-symbols-outlined text-bark-500" style="font-size:20px">admin_panel_settings</span>Panel Admin — Kelola User</div>
+          <div class="section-title">
+            <span class="material-symbols-outlined text-bark-500" style="font-size:20px">admin_panel_settings</span>
+            Panel Admin — Kelola User
+          </div>
           <div id="admin-user-list" class="space-y-2"></div>
         </div>
       </div>
@@ -286,27 +301,20 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
 <div id="datalist-container"></div>
 
 <script>
-// =====================================================
-// KONFIGURASI — GANTI DENGAN DATA ANDA
-// =====================================================
-const SUPABASE_URL = 'https://qdzxpvsgdhoqqxdvhyny.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFkenhwdnNnZGhvcXF4ZHZoeW55Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ3NzU0MjEsImV4cCI6MjA5MDM1MTQyMX0.Wy4Fxb--vEf568w2pq23e4Rtj2o7P7hh3k_p3Kl7x7E';
-const ADMIN_WA_NUMBER = '62881082928759';
-
-// EmailJS — GANTI DENGAN DATA DARI EMAILJS.COM
+/* ===========================================================
+   KONFIGURASI — GANTI 4 BARIS INI DENGAN DATA ANDA
+   =========================================================== */
+const SUPABASE_URL       = 'https://YOUR_PROJECT.supabase.co';
+const SUPABASE_ANON_KEY  = 'YOUR_ANON_KEY';
+const ADMIN_WA_NUMBER    = '6281234567890';
 const EMAILJS_PUBLIC_KEY = 'YOUR_EMAILJS_PUBLIC_KEY';
 const EMAILJS_SERVICE_ID = 'YOUR_EMAILJS_SERVICE_ID';
-const EMAILJS_TEMPLATE_ID = 'YOUR_EMAILJS_TEMPLATE_ID';
+const EMAILJS_TEMPLATE_ID= 'YOUR_EMAILJS_TEMPLATE_ID';
+/* =========================================================== */
 
-// =====================================================
-// INISIALISASI
-// =====================================================
 const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 emailjs.init(EMAILJS_PUBLIC_KEY);
 
-// =====================================================
-// STATE GLOBAL
-// =====================================================
 let currentUser = null;
 let currentIP = '';
 let allEntries = [];
@@ -315,16 +323,11 @@ let allNomorUrutValues = [];
 let printQueueData = [];
 let selectedHistoryId = null;
 let disabledPrintBtns = { stck: null, form: null };
-
-// State 2FA
 let pendingPinId = null;
 let resendCooldown = 0;
 let resendInterval = null;
 let isVerifying = false;
 
-// =====================================================
-// KONFIGURASI FIELD
-// =====================================================
 const FIELDS = [
   { key:'nomor_urut_pendaftaran', label:'NOMOR URUT PENDAFTARAN', type:'spinner' },
   { key:'nopol', label:'NOPOL', type:'dropdown', bold:true },
@@ -350,385 +353,351 @@ const FIELDS = [
 ];
 const CARD_FIELDS = ['nomor_urut_pendaftaran','nopol','penanggung_jawab','merk','tipe','tahun_pembuatan'];
 
-// =====================================================
-// UTILITAS
-// =====================================================
-function toast(msg, type='info') {
-  const box = document.getElementById('toast-box');
-  const el = document.createElement('div');
-  el.className = `toast-item toast-${type}`;
+/* =================== UTILITAS =================== */
+function toast(msg, type) {
+  type = type || 'info';
+  var box = document.getElementById('toast-box');
+  var el = document.createElement('div');
+  el.className = 'toast-item toast-' + type;
   el.textContent = msg;
   box.appendChild(el);
-  setTimeout(() => el.remove(), 3000);
+  setTimeout(function(){ el.remove(); }, 3000);
 }
 
 function formatDate(d) {
   if (!d) return '';
-  const dt = new Date(d);
-  return String(dt.getDate()).padStart(2,'0')+'-'+String(dt.getMonth()+1).padStart(2,'0')+'-'+dt.getFullYear();
+  var dt = new Date(d);
+  return String(dt.getDate()).padStart(2,'0') + '-' + String(dt.getMonth()+1).padStart(2,'0') + '-' + dt.getFullYear();
 }
 
 function toInputDate(d) {
   if (!d) return '';
-  const dt = new Date(d);
-  return dt.getFullYear()+'-'+String(dt.getMonth()+1).padStart(2,'0')+'-'+String(dt.getDate()).padStart(2,'0');
+  var dt = new Date(d);
+  return dt.getFullYear() + '-' + String(dt.getMonth()+1).padStart(2,'0') + '-' + String(dt.getDate()).padStart(2,'0');
 }
 
 function showPage(id) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  var pages = document.querySelectorAll('.page');
+  for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
   document.getElementById(id).classList.add('active');
 }
 
-async function fetchIP() {
-  try {
-    const r = await fetch('https://api.ipify.org?format=json');
-    const j = await r.json();
-    currentIP = j.ip;
-  } catch(e) { currentIP = 'unknown'; }
+function togglePw(inputId, btn) {
+  var inp = document.getElementById(inputId);
+  var icon = btn.querySelector('.material-symbols-outlined');
+  if (inp.type === 'password') {
+    inp.type = 'text';
+    icon.textContent = 'visibility';
+  } else {
+    inp.type = 'password';
+    icon.textContent = 'visibility_off';
+  }
 }
 
-// =====================================================
-// 2FA — GENERATE, KIRIM, VERIFIKASI PIN
-// =====================================================
+function fetchIP() {
+  fetch('https://api.ipify.org?format=json')
+    .then(function(r){ return r.json(); })
+    .then(function(j){ currentIP = j.ip; })
+    .catch(function(){ currentIP = 'unknown'; });
+}
+
+/* =================== 2FA PIN =================== */
 function generatePIN() {
   return String(Math.floor(10000 + Math.random() * 90000));
 }
 
-async function sendPINEmail(email, pin) {
-  try {
-    const result = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-      to_email: email,
-      pin: pin,
-      app_name: 'Entry-STCK-app'
-    });
-    console.log('EmailJS status:', result.status);
-    return result.status === 200;
-  } catch(e) {
-    console.error('EmailJS error:', e);
-    return false;
-  }
+function sendPINEmail(email, pin) {
+  return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+    to_email: email,
+    pin: pin,
+    app_name: 'Entry-STCK-app'
+  });
 }
 
-async function initiate2FA() {
+function initiate2FA() {
   if (!currentUser) return;
+  var self = this;
+  var pin = generatePIN();
+  var expiresAt = new Date(Date.now() + 5 * 60 * 1000).toISOString();
 
-  const pin = generatePIN();
-  const expiresAt = new Date(Date.now() + 5 * 60 * 1000).toISOString();
+  sb.from('login_pins').delete().eq('user_id', currentUser.id).then(function() {
+    return sb.from('login_pins').insert({
+      user_id: currentUser.id,
+      pin: pin,
+      expires_at: expiresAt
+    }).select().single();
+  }).then(function(result) {
+    var data = result.data;
+    if (!data) {
+      toast('Gagal membuat PIN','err');
+      sb.auth.signOut();
+      currentUser = null;
+      showPage('page-login');
+      return;
+    }
+    pendingPinId = data.id;
+    showPage('page-pin');
+    setupPinInputs();
+    document.getElementById('pin-error').classList.add('hidden');
+    document.getElementById('pin-info').innerHTML = '<span class="spin-load"></span> Mengirim PIN...';
 
-  // Bersihkan PIN lama user ini
-  try { await sb.from('login_pins').delete().eq('user_id', currentUser.id); } catch(e) {}
-
-  // Simpan PIN baru
-  const { data, error } = await sb.from('login_pins').insert({
-    user_id: currentUser.id,
-    pin: pin,
-    expires_at: expiresAt
-  }).select().single();
-
-  if (error) {
-    toast('Gagal membuat PIN','err');
-    await sb.auth.signOut();
-    currentUser = null;
-    showPage('page-login');
-    return;
-  }
-
-  pendingPinId = data.id;
-
-  // Kirim email
-  showPage('page-pin');
-  setupPinInputs();
-  document.getElementById('pin-error').classList.add('hidden');
-  document.getElementById('pin-info').innerHTML = '<span class="spin-load"></span> Mengirim PIN...';
-
-  const sent = await sendPINEmail(currentUser.email, pin);
-
-  if (sent) {
-    document.getElementById('pin-info').textContent = 'PIN dikirim ke ' + currentUser.email;
-    startResendCooldown();
-  } else {
-    document.getElementById('pin-info').innerHTML = '<span class="text-red-600 font-semibold">Gagal mengirim email. Periksa konfigurasi EmailJS atau coba kirim ulang.</span>';
-    const btn = document.getElementById('btn-resend-pin');
-    btn.classList.remove('hidden');
-    btn.disabled = false;
-    btn.innerHTML = 'Kirim Ulang PIN';
-  }
+    return sendPINEmail(currentUser.email, pin);
+  }).then(function(result) {
+    if (result && result.status === 200) {
+      document.getElementById('pin-info').textContent = 'PIN dikirim ke ' + currentUser.email;
+      startResendCooldown();
+    } else {
+      document.getElementById('pin-info').innerHTML = '<span class="text-red-600 font-semibold">Gagal mengirim email. Periksa konfigurasi EmailJS.</span>';
+      var btn = document.getElementById('btn-resend-pin');
+      btn.classList.remove('hidden');
+      btn.disabled = false;
+      btn.innerHTML = 'Kirim Ulang PIN';
+    }
+  });
 }
 
 function setupPinInputs() {
-  const container = document.getElementById('pin-inputs');
-  container.innerHTML = '';
-  for (let i = 0; i < 5; i++) {
-    const inp = document.createElement('input');
+  var c = document.getElementById('pin-inputs');
+  c.innerHTML = '';
+  for (var i = 0; i < 5; i++) {
+    var inp = document.createElement('input');
     inp.type = 'text';
     inp.inputMode = 'numeric';
     inp.maxLength = 1;
     inp.className = 'pin-box';
     inp.autocomplete = 'one-time-code';
     inp.dataset.idx = i;
-    inp.addEventListener('input', (e) => onPinInput(e, i));
-    inp.addEventListener('keydown', (e) => onPinKeydown(e, i));
-    inp.addEventListener('focus', (e) => e.target.select());
-    inp.addEventListener('paste', (e) => onPinPaste(e));
-    container.appendChild(inp);
+    (function(idx, input) {
+      input.addEventListener('input', function(e){ onPinInput(e, idx); });
+      input.addEventListener('keydown', function(e){ onPinKeydown(e, idx); });
+      input.addEventListener('focus', function(e){ e.target.select(); });
+      input.addEventListener('paste', function(e){ onPinPaste(e); });
+    })(i, inp);
+    c.appendChild(inp);
   }
-  setTimeout(() => container.children[0].focus(), 300);
+  setTimeout(function(){ c.children[0].focus(); }, 300);
 }
 
 function onPinInput(e, idx) {
-  const val = e.target.value.replace(/[^0-9]/g, '');
+  var val = e.target.value.replace(/[^0-9]/g, '');
   e.target.value = val.slice(-1);
   document.getElementById('pin-error').classList.add('hidden');
-  // Hapus class error
-  document.querySelectorAll('.pin-box').forEach(b => b.classList.remove('error'));
-  if (val && idx < 4) {
-    document.getElementById('pin-inputs').children[idx + 1].focus();
-  }
-  if (getEnteredPIN().length === 5) {
-    verifyPIN();
-  }
+  var boxes = document.getElementById('pin-inputs').children;
+  for (var i=0;i<boxes.length;i++) boxes[i].classList.remove('error');
+  if (val && idx < 4) boxes[idx + 1].focus();
+  if (getEnteredPIN().length === 5) verifyPIN();
 }
 
 function onPinKeydown(e, idx) {
   if (e.key === 'Backspace' && !e.target.value && idx > 0) {
-    const prev = document.getElementById('pin-inputs').children[idx - 1];
+    var prev = document.getElementById('pin-inputs').children[idx - 1];
     prev.value = '';
     prev.focus();
   }
-  if (e.key === 'Enter') {
-    verifyPIN();
-  }
+  if (e.key === 'Enter') verifyPIN();
 }
 
 function onPinPaste(e) {
   e.preventDefault();
-  const pasted = (e.clipboardData || window.clipboardData).getData('text').replace(/[^0-9]/g, '').slice(0, 5);
-  const boxes = document.getElementById('pin-inputs').children;
-  for (let i = 0; i < pasted.length && i < 5; i++) {
-    boxes[i].value = pasted[i];
-  }
-  if (pasted.length === 5) {
-    boxes[4].focus();
-    verifyPIN();
-  } else if (pasted.length > 0) {
-    boxes[pasted.length].focus();
-  }
+  var pasted = (e.clipboardData || window.clipboardData).getData('text').replace(/[^0-9]/g, '').slice(0, 5);
+  var boxes = document.getElementById('pin-inputs').children;
+  for (var i = 0; i < pasted.length && i < 5; i++) boxes[i].value = pasted[i];
+  if (pasted.length === 5) { boxes[4].focus(); verifyPIN(); }
+  else if (pasted.length > 0) boxes[pasted.length].focus();
 }
 
 function getEnteredPIN() {
-  return Array.from(document.getElementById('pin-inputs').children).map(i => i.value).join('');
+  var boxes = document.getElementById('pin-inputs').children;
+  var s = '';
+  for (var i=0;i<boxes.length;i++) s += boxes[i].value;
+  return s;
 }
 
-async function verifyPIN() {
+function verifyPIN() {
   if (isVerifying || !pendingPinId) return;
-  const entered = getEnteredPIN();
+  var entered = getEnteredPIN();
   if (entered.length !== 5) return;
-
   isVerifying = true;
   document.getElementById('pin-info').innerHTML = '<span class="spin-load"></span> Memverifikasi...';
 
-  // Ambil data PIN dari database
-  const { data: pinData, error } = await sb.from('login_pins').select('*').eq('id', pendingPinId).single();
-
-  if (error || !pinData) {
-    showPinError('Sesi PIN tidak valid. Silakan login ulang.');
-    isVerifying = false;
-    return;
-  }
-
-  if (pinData.used) {
-    showPinError('PIN sudah digunakan. Silakan login ulang.');
-    await sb.auth.signOut();
-    currentUser = null;
-    isVerifying = false;
-    setTimeout(() => showPage('page-login'), 2000);
-    return;
-  }
-
-  if (new Date(pinData.expires_at) < new Date()) {
-    showPinError('PIN sudah expired. Silakan login ulang.');
-    await sb.auth.signOut();
-    currentUser = null;
-    isVerifying = false;
-    setTimeout(() => showPage('page-login'), 2000);
-    return;
-  }
-
-  if (pinData.attempts >= 3) {
-    showPinError('Terlalu banyak percobaan salah. Silakan login ulang.');
-    await sb.auth.signOut();
-    currentUser = null;
-    isVerifying = false;
-    setTimeout(() => showPage('page-login'), 2000);
-    return;
-  }
-
-  // Bandingkan PIN
-  if (entered !== pinData.pin) {
-    await sb.from('login_pins').update({ attempts: pinData.attempts + 1 }).eq('id', pendingPinId);
-    const sisa = 3 - (pinData.attempts + 1);
-    showPinError('PIN salah. Sisa percobaan: ' + sisa);
-    // Animasi shake pada semua box
-    document.querySelectorAll('.pin-box').forEach(b => {
-      b.classList.add('error');
-      b.value = '';
+  sb.from('login_pins').select('*').eq('id', pendingPinId).single().then(function(result) {
+    var pinData = result.data;
+    if (!pinData) { showPinError('Sesi PIN tidak valid. Silakan login ulang.'); isVerifying=false; return; }
+    if (pinData.used) {
+      showPinError('PIN sudah digunakan. Silakan login ulang.');
+      sb.auth.signOut(); currentUser=null; isVerifying=false;
+      setTimeout(function(){ showPage('page-login'); }, 2000);
+      return;
+    }
+    if (new Date(pinData.expires_at) < new Date()) {
+      showPinError('PIN sudah expired. Silakan login ulang.');
+      sb.auth.signOut(); currentUser=null; isVerifying=false;
+      setTimeout(function(){ showPage('page-login'); }, 2000);
+      return;
+    }
+    if (pinData.attempts >= 3) {
+      showPinError('Terlalu banyak percobaan salah. Silakan login ulang.');
+      sb.auth.signOut(); currentUser=null; isVerifying=false;
+      setTimeout(function(){ showPage('page-login'); }, 2000);
+      return;
+    }
+    if (entered !== pinData.pin) {
+      sb.from('login_pins').update({ attempts: pinData.attempts + 1 }).eq('id', pendingPinId).then(function() {
+        var sisa = 3 - (pinData.attempts + 1);
+        showPinError('PIN salah. Sisa percobaan: ' + sisa);
+        var boxes = document.getElementById('pin-inputs').children;
+        for (var i=0;i<boxes.length;i++) { boxes[i].classList.add('error'); boxes[i].value=''; }
+        boxes[0].focus();
+        isVerifying = false;
+      });
+      return;
+    }
+    sb.from('login_pins').update({ used: true }).eq('id', pendingPinId).then(function() {
+      pendingPinId = null;
+      if (resendInterval) { clearInterval(resendInterval); resendInterval=null; }
+      isVerifying = false;
+      toast('Verifikasi berhasil','ok');
+      afterAuth();
     });
-    document.getElementById('pin-inputs').children[0].focus();
-    isVerifying = false;
-    return;
-  }
-
-  // PIN BENAR
-  await sb.from('login_pins').update({ used: true }).eq('id', pendingPinId);
-  pendingPinId = null;
-  if (resendInterval) { clearInterval(resendInterval); resendInterval = null; }
-  isVerifying = false;
-
-  toast('Verifikasi berhasil','ok');
-  await afterAuth();
+  });
 }
 
 function showPinError(msg) {
-  const el = document.getElementById('pin-error');
+  var el = document.getElementById('pin-error');
   el.textContent = msg;
   el.classList.remove('hidden');
 }
 
 function startResendCooldown() {
   resendCooldown = 60;
-  const btn = document.getElementById('btn-resend-pin');
-  const timerEl = document.getElementById('resend-timer');
+  var btn = document.getElementById('btn-resend-pin');
   btn.classList.remove('hidden');
   btn.disabled = true;
   btn.innerHTML = 'Kirim Ulang PIN (<span id="resend-timer">60</span>)';
-
   if (resendInterval) clearInterval(resendInterval);
-  resendInterval = setInterval(() => {
+  resendInterval = setInterval(function() {
     resendCooldown--;
-    const t = document.getElementById('resend-timer');
+    var t = document.getElementById('resend-timer');
     if (t) t.textContent = resendCooldown;
     if (resendCooldown <= 0) {
-      clearInterval(resendInterval);
-      resendInterval = null;
+      clearInterval(resendInterval); resendInterval=null;
       btn.disabled = false;
       btn.innerHTML = 'Kirim Ulang PIN';
     }
   }, 1000);
 }
 
-async function resendPIN() {
+function resendPIN() {
   if (resendCooldown > 0 || !currentUser) return;
-  await initiate2FA();
+  initiate2FA();
 }
 
 function cancelPIN() {
-  if (resendInterval) { clearInterval(resendInterval); resendInterval = null; }
-  pendingPinId = null;
-  isVerifying = false;
-  currentUser = null;
+  if (resendInterval) { clearInterval(resendInterval); resendInterval=null; }
+  pendingPinId=null; isVerifying=false; currentUser=null;
   sb.auth.signOut();
   showPage('page-login');
 }
 
-// =====================================================
-// AUTENTIKASI
-// =====================================================
-async function doLogin() {
-  const email = document.getElementById('login-email').value.trim();
-  const pass = document.getElementById('login-pass').value;
+/* =================== AUTENTIKASI =================== */
+function doLogin() {
+  var email = document.getElementById('login-email').value.trim();
+  var pass = document.getElementById('login-pass').value;
   if (!email || !pass) return toast('Isi email dan password','err');
+  var btn = document.getElementById('btn-login');
+  btn.disabled = true; btn.textContent = 'Memproses...';
 
-  const btn = document.getElementById('btn-login');
-  btn.disabled = true;
-  btn.textContent = 'Memproses...';
+  sb.auth.signInWithPassword({ email: email, password: pass }).then(function(result) {
+    btn.disabled = false; btn.textContent = 'MASUK';
+    if (result.error) return toast(result.error.message, 'err');
 
-  const { data, error } = await sb.auth.signInWithPassword({ email, password: pass });
-
-  btn.disabled = false;
-  btn.textContent = 'MASUK';
-
-  if (error) return toast(error.message, 'err');
-
-  // Login password berhasil — lanjut ke 2FA
-  const { data: { user } } = await sb.auth.getUser();
-  const { data: profile } = await sb.from('profiles').select('*').eq('id', user.id).single();
-  if (!profile) { toast('Profil tidak ditemukan','err'); await sb.auth.signOut(); return; }
-
-  currentUser = profile;
-  toast('Login berhasil, cek email untuk PIN','info');
-  await initiate2FA();
+    return sb.auth.getUser();
+  }).then(function(result) {
+    if (!result || !result.data) return;
+    var user = result.data.user;
+    return sb.from('profiles').select('*').eq('id', user.id).single();
+  }).then(function(result) {
+    if (!result || !result.data) { toast('Profil tidak ditemukan','err'); sb.auth.signOut(); return; }
+    currentUser = result.data;
+    toast('Login berhasil, cek email untuk PIN','info');
+    initiate2FA();
+  });
 }
 
-async function doRegister() {
-  const email = document.getElementById('reg-email').value.trim();
-  const pass = document.getElementById('reg-pass').value;
+function doRegister() {
+  var email = document.getElementById('reg-email').value.trim();
+  var pass = document.getElementById('reg-pass').value;
   if (!email || !pass) return toast('Isi email dan password','err');
   if (pass.length < 6) return toast('Password minimal 6 karakter','err');
 
-  const { error } = await sb.auth.signUp({ email, password: pass });
-  if (error) return toast(error.message, 'err');
-
-  toast('Registrasi berhasil, silakan login','ok');
-  await sb.auth.signOut();
-  showPage('page-login');
+  sb.auth.signUp({ email: email, password: pass }).then(function(result) {
+    if (result.error) return toast(result.error.message, 'err');
+    toast('Registrasi berhasil, silakan login','ok');
+    sb.auth.signOut();
+    showPage('page-login');
+  });
 }
 
-async function doLogout() {
-  try { await sb.rpc('deactivate_self'); } catch(e) {}
-  if (resendInterval) { clearInterval(resendInterval); resendInterval = null; }
-  pendingPinId = null;
-  currentUser = null;
-  await sb.auth.signOut();
-  showPage('page-login');
-  toast('Berhasil logout','ok');
+function doLogout() {
+  sb.rpc('deactivate_self').catch(function(){});
+  if (resendInterval) { clearInterval(resendInterval); resendInterval=null; }
+  pendingPinId=null; currentUser=null;
+  sb.auth.signOut().then(function() {
+    showPage('page-login');
+    toast('Berhasil logout','ok');
+  });
 }
 
-async function afterAuth() {
-  const { data: { user } } = await sb.auth.getUser();
-  if (!user) return showPage('page-login');
-
-  let profile = currentUser;
-  if (!profile || profile.id !== user.id) {
-    const { data: p } = await sb.from('profiles').select('*').eq('id', user.id).single();
-    if (!p) { await sb.auth.signOut(); return showPage('page-login'); }
-    profile = p;
-    currentUser = p;
-  }
-
-  document.getElementById('user-email-display').textContent = profile.email;
-
-  await fetchIP();
-  try { await sb.rpc('set_my_ip', { p_ip: currentIP }); } catch(e) {}
-
-  showPage('page-entry');
-
-  if (profile.role === 'admin') {
-    document.getElementById('role-badge').classList.remove('hidden');
-    document.getElementById('btn-export').classList.remove('hidden');
-    document.getElementById('sec-admin').classList.remove('hidden');
-    showActiveContent();
-    loadAdminUsers();
-  } else {
-    document.getElementById('role-badge').classList.add('hidden');
-    document.getElementById('btn-export').classList.add('hidden');
-    document.getElementById('sec-admin').classList.add('hidden');
-    if (profile.is_active) {
-      showActiveContent();
-    } else {
-      showInactiveNotice();
-      subscribeActivation();
-      return; // jangan load data jika non-aktif
+function afterAuth() {
+  sb.auth.getUser().then(function(result) {
+    if (!result.data || !result.data.user) return showPage('page-login');
+    var user = result.data.user;
+    var profile = currentUser;
+    if (!profile || profile.id !== user.id) {
+      return sb.from('profiles').select('*').eq('id', user.id).single().then(function(r) {
+        if (!r.data) { sb.auth.signOut(); showPage('page-login'); return; }
+        currentUser = r.data;
+        continueAfterAuth();
+      });
     }
-  }
+    continueAfterAuth();
+  });
+}
 
-  await loadAllData();
+function continueAfterAuth() {
+  var profile = currentUser;
+  document.getElementById('user-email-display').textContent = profile.email;
+  fetchIP().then(function() {
+    return sb.rpc('set_my_ip', { p_ip: currentIP }).catch(function(){});
+  }).then(function() {
+    showPage('page-entry');
+    if (profile.role === 'admin') {
+      document.getElementById('role-badge').classList.remove('hidden');
+      document.getElementById('btn-export').classList.remove('hidden');
+      document.getElementById('sec-admin').classList.remove('hidden');
+      showActiveContent();
+      loadAdminUsers();
+    } else {
+      document.getElementById('role-badge').classList.add('hidden');
+      document.getElementById('btn-export').classList.add('hidden');
+      document.getElementById('sec-admin').classList.add('hidden');
+      if (profile.is_active) {
+        showActiveContent();
+      } else {
+        showInactiveNotice();
+        subscribeActivation();
+        return;
+      }
+    }
+    loadAllData();
+  });
 }
 
 function showInactiveNotice() {
   document.getElementById('notice-inactive').classList.remove('hidden');
   document.getElementById('content-active').classList.add('hidden');
-  const msg = encodeURIComponent('Admin Entry STCK, email saya '+currentUser.email+', mohon Aktivasi Entry');
-  document.getElementById('wa-link').href = 'https://wa.me/'+ADMIN_WA_NUMBER+'?text='+msg;
+  var msg = encodeURIComponent('Admin Entry STCK, email saya ' + currentUser.email + ', mohon Aktivasi Entry');
+  document.getElementById('wa-link').href = 'https://wa.me/' + ADMIN_WA_NUMBER + '?text=' + msg;
 }
 
 function showActiveContent() {
@@ -736,16 +705,13 @@ function showActiveContent() {
   document.getElementById('content-active').classList.remove('hidden');
 }
 
-// =====================================================
-// REALTIME — SUBSCRIBE AKTIVASI USER
-// =====================================================
 function subscribeActivation() {
   if (!currentUser) return;
-  const ch = sb.channel('profile-activation-'+currentUser.id)
+  var ch = sb.channel('profile-activation-' + currentUser.id)
     .on('postgres_changes', {
       event:'UPDATE', schema:'public', table:'profiles',
-      filter:'id=eq.'+currentUser.id
-    }, (payload) => {
+      filter:'id=eq.' + currentUser.id
+    }, function(payload) {
       if (payload.new.is_active && !payload.old.is_active) {
         currentUser.is_active = true;
         toast('Akun telah diaktifkan Admin!','ok');
@@ -757,434 +723,506 @@ function subscribeActivation() {
     .subscribe();
 }
 
-// =====================================================
-// CEK IP BERKALA
-// =====================================================
-setInterval(async () => {
+setInterval(function() {
   if (!currentUser || !currentUser.is_active || currentUser.role === 'admin') return;
-  const oldIP = currentIP;
-  await fetchIP();
-  if (currentIP !== 'unknown' && oldIP !== 'unknown' && currentIP !== oldIP) {
-    toast('IP berubah, silakan login ulang','err');
-    doLogout();
-  }
+  var oldIP = currentIP;
+  fetchIP().then(function() {
+    if (currentIP !== 'unknown' && oldIP !== 'unknown' && currentIP !== oldIP) {
+      toast('IP berubah, silakan login ulang','err');
+      doLogout();
+    }
+  });
 }, 30000);
 
-// =====================================================
-// LOAD DATA
-// =====================================================
-async function loadAllData() {
-  await loadEntries();
-  await loadDatalists();
-  applyFilters();
-  loadPrintQueue();
-}
-
-async function loadEntries() {
-  let q = sb.from('entries').select('*').order('created_at', { ascending: false });
-  const { data, error } = await q;
-  if (error) { toast('Gagal memuat data','err'); return; }
-  allEntries = data || [];
-  allNopolValues = [...new Set(allEntries.map(e=>e.nopol).filter(Boolean))].sort();
-  allNomorUrutValues = [...new Set(allEntries.map(e=>e.nomor_urut_pendaftaran).filter(Boolean))].sort((a,b) => {
-    const na=parseInt(a), nb=parseInt(b);
-    if(!isNaN(na)&&!isNaN(nb)) return na-nb;
-    return a.localeCompare(b);
+/* =================== LOAD DATA =================== */
+function loadAllData() {
+  return loadEntries().then(function() {
+    return loadDatalists();
+  }).then(function() {
+    applyFilters();
+    loadPrintQueue();
   });
 }
 
-async function loadDatalists() {
-  const c = document.getElementById('datalist-container');
+function loadEntries() {
+  return sb.from('entries').select('*').order('created_at', { ascending: false }).then(function(result) {
+    if (result.error) { toast('Gagal memuat data','err'); return; }
+    allEntries = result.data || [];
+    var nopolSet = {}, urutSet = {};
+    for (var i = 0; i < allEntries.length; i++) {
+      if (allEntries[i].nopol) nopolSet[allEntries[i].nopol] = true;
+      if (allEntries[i].nomor_urut_pendaftaran) urutSet[allEntries[i].nomor_urut_pendaftaran] = true;
+    }
+    allNopolValues = Object.keys(nopolSet).sort();
+    allNomorUrutValues = Object.keys(urutSet).sort(function(a,b) {
+      var na=parseInt(a), nb=parseInt(b);
+      if(!isNaN(na)&&!isNaN(nb)) return na-nb;
+      return a.localeCompare(b);
+    });
+  });
+}
+
+function loadDatalists() {
+  var c = document.getElementById('datalist-container');
   c.innerHTML = '';
-  FIELDS.filter(f=>f.type==='dropdown').forEach(f => {
-    const vals = [...new Set(allEntries.map(e=>e[f.key]).filter(Boolean))].sort();
-    const dl = document.createElement('datalist');
-    dl.id = 'dl-'+f.key;
-    vals.forEach(v => { const o=document.createElement('option'); o.value=v; dl.appendChild(o); });
+  var promises = [];
+  for (var fi = 0; fi < FIELDS.length; fi++) {
+    var f = FIELDS[fi];
+    if (f.type !== 'dropdown') continue;
+    var valsSet = {};
+    for (var i = 0; i < allEntries.length; i++) {
+      var v = allEntries[i][f.key];
+      if (v) valsSet[v] = true;
+    }
+    var vals = Object.keys(valsSet).sort();
+    var dl = document.createElement('datalist');
+    dl.id = 'dl-' + f.key;
+    for (var vi = 0; vi < vals.length; vi++) {
+      var o = document.createElement('option');
+      o.value = vals[vi];
+      dl.appendChild(o);
+    }
     c.appendChild(dl);
-  });
+  }
 }
 
-// =====================================================
-// FILTER & HISTORY
-// =====================================================
+/* =================== FILTER & HISTORY =================== */
 function getFilteredEntries() {
-  const df = document.getElementById('f-date-from').value;
-  const dt = document.getElementById('f-date-to').value;
-  const nf = document.getElementById('f-nopol').value.trim().toUpperCase();
-  const nuf = document.getElementById('f-nomor-urut').value.trim().toUpperCase();
-  return allEntries.filter(e => {
-    if (!e.stck_printed && !e.form_printed) return false;
-    if (df) { const d=new Date(e.created_at); d.setHours(0,0,0,0); if(d<new Date(df)) return false; }
-    if (dt) { const d=new Date(e.created_at); d.setHours(23,59,59,999); if(d>new Date(dt)) return false; }
-    if (nf && !e.nopol.toUpperCase().includes(nf)) return false;
-    if (nuf && !e.nomor_urut_pendaftaran.toUpperCase().includes(nuf)) return false;
-    return true;
-  });
+  var df = document.getElementById('f-date-from').value;
+  var dt = document.getElementById('f-date-to').value;
+  var nf = document.getElementById('f-nopol').value.trim().toUpperCase();
+  var nuf = document.getElementById('f-nomor-urut').value.trim().toUpperCase();
+  var result = [];
+  for (var i = 0; i < allEntries.length; i++) {
+    var e = allEntries[i];
+    if (!e.stck_printed && !e.form_printed) continue;
+    if (df) { var d=new Date(e.created_at); d.setHours(0,0,0,0); if(d<new Date(df)) continue; }
+    if (dt) { var d2=new Date(e.created_at); d2.setHours(23,59,59,999); if(d2>new Date(dt)) continue; }
+    if (nf && e.nopol.toUpperCase().indexOf(nf) === -1) continue;
+    if (nuf && e.nomor_urut_pendaftaran.toUpperCase().indexOf(nuf) === -1) continue;
+    result.push(e);
+  }
+  return result;
 }
 
 function applyFilters() {
   renderHistory(getFilteredEntries());
 }
 
+function shortLabel(f) {
+  var map = {
+    'nomor_urut_pendaftaran':'No.Urut','penanggung_jawab':'PJ','tahun_pembuatan':'Thn',
+    'alamat_penanggung_jawab':'Al.PJ','alamat_badan_usaha':'Al.BU','tujuan_penggunaan':'Tujuan',
+    'isi_silinder':'CC','nomor_rangka':'No.Rang','nomor_mesin':'No.Mes','bahan_bakar':'BBM'
+  };
+  return map[f] || f.charAt(0).toUpperCase() + f.slice(1,6);
+}
+
 function renderHistory(entries) {
-  const c = document.getElementById('history-list');
+  var c = document.getElementById('history-list');
   document.getElementById('history-count').textContent = entries.length;
-  if (!entries.length) { c.innerHTML='<p class="text-sm text-bark-400 py-4 text-center w-full">Tidak ada histori untuk filter ini</p>'; return; }
-  c.innerHTML = entries.map(e => {
-    const sel = e.id===selectedHistoryId;
-    const ps = [];
-    if(e.stck_printed) ps.push('STCK'); if(e.form_printed) ps.push('FORM');
-    let ab = '';
-    if(currentUser && currentUser.role==='admin') {
-      ab = `<div class="flex gap-1 mt-2 flex-wrap">
-        <button onclick="event.stopPropagation();hideFromUser('${e.id}')" class="btn-outline btn-sm text-xs"><span class="material-symbols-outlined" style="font-size:12px;vertical-align:middle">visibility_off</span> Sembunyikan</button>
-        <button onclick="event.stopPropagation();deleteEntry('${e.id}')" class="btn-danger text-xs"><span class="material-symbols-outlined" style="font-size:12px;vertical-align:middle">delete_forever</span> Hapus</button>
-        ${e.hidden_from_user?'<span class="text-xs text-red-600 font-semibold ml-1">[Tersembunyi]</span>':''}
-      </div>`;
+  if (!entries.length) {
+    c.innerHTML = '<p class="text-sm text-bark-400 py-4 text-center w-full">Tidak ada histori untuk filter ini</p>';
+    return;
+  }
+  var html = '';
+  for (var i = 0; i < entries.length; i++) {
+    var e = entries[i];
+    var sel = e.id === selectedHistoryId;
+    var ps = [];
+    if (e.stck_printed) ps.push('STCK');
+    if (e.form_printed) ps.push('FORM');
+    var ab = '';
+    if (currentUser && currentUser.role === 'admin') {
+      ab = '<div class="flex gap-1 mt-2 flex-wrap">' +
+        '<button onclick="event.stopPropagation();hideFromUser(\'' + e.id + '\')" class="btn-outline btn-sm text-xs"><span class="material-symbols-outlined" style="font-size:12px;vertical-align:middle">visibility_off</span> Sembunyikan</button>' +
+        '<button onclick="event.stopPropagation();deleteEntry(\'' + e.id + '\')" class="btn-danger text-xs"><span class="material-symbols-outlined" style="font-size:12px;vertical-align:middle">delete_forever</span> Hapus</button>' +
+        (e.hidden_from_user ? '<span class="text-xs text-red-600 font-semibold ml-1">[Tersembunyi]</span>' : '') +
+        '</div>';
     }
-    const shortLabel = f => f==='nomor_urut_pendaftaran'?'No.Urut':f==='penanggung_jawab'?'PJ':f==='tahun_pembuatan'?'Thn':f==='alamat_penanggung_jawab'?'Al.PJ':f==='alamat_badan_usaha'?'Al.BU':f==='tujuan_penggunaan'?'Tujuan':f==='isi_silinder'?'CC':f==='nomor_rangka'?'No.Rang':f==='nomor_mesin'?'No.Mes':f==='bahan_bakar'?'BBM':f.charAt(0).toUpperCase()+f.slice(1,6);
-    return `<div class="card-entry flex-shrink-0 ${sel?'selected':''}" style="width:210px" onclick="selectHistory('${e.id}')">
-      <div class="text-xs text-bark-400 mb-1">${formatDate(e.created_at)}</div>
-      ${CARD_FIELDS.map(f=>`<div class="text-xs ${f==='nopol'?'font-bold text-bark-800':''}"><span class="text-bark-400">${shortLabel(f)}:</span> ${(e[f.key]||'-')}</div>`).join('')}
-      <div class="flex gap-1 mt-1">${ps.map(s=>`<span class="text-xs px-1.5 py-0.5 rounded bg-green-100 text-green-700 font-semibold">${s}</span>`).join('')}</div>
-      ${ab}</div>`;
-  }).join('');
+    var cardFields = '<div class="text-xs text-bark-400 mb-1">' + formatDate(e.created_at) + '</div>';
+    for (var ci = 0; ci < CARD_FIELDS.length; ci++) {
+      var f = CARD_FIELDS[ci];
+      var boldCls = f === 'nopol' ? 'font-bold text-bark-800' : '';
+      cardFields += '<div class="text-xs ' + boldCls + '"><span class="text-bark-400">' + shortLabel(f) + ':</span> ' + (e[f] || '-') + '</div>';
+    }
+    var badges = '<div class="flex gap-1 mt-1">';
+    for (var pi = 0; pi < ps.length; pi++) {
+      badges += '<span class="text-xs px-1.5 py-0.5 rounded bg-green-100 text-green-700 font-semibold">' + ps[pi] + '</span>';
+    }
+    badges += '</div>';
+
+    html += '<div class="card-entry flex-shrink-0 ' + (sel ? 'selected' : '') + '" style="width:210px" onclick="selectHistory(\'' + e.id + '\')">' + cardFields + badges + ab + '</div>';
+  }
+  c.innerHTML = html;
 }
 
 function selectHistory(entryId) {
   selectedHistoryId = entryId;
-  const e = allEntries.find(x=>x.id===entryId);
-  if(!e) return;
-  FIELDS.forEach(f => {
-    const el = document.getElementById('ef-'+f.key);
-    if(!el) return;
-    if(f.key==='tanggal_mulai'||f.key==='tanggal_berakhir') el.value=toInputDate(e[f.key]);
-    else el.value=e[f.key]||'';
-  });
-  disabledPrintBtns = { stck:null, form:null };
+  var e = null;
+  for (var i = 0; i < allEntries.length; i++) { if (allEntries[i].id === entryId) { e = allEntries[i]; break; } }
+  if (!e) return;
+  for (var fi = 0; fi < FIELDS.length; fi++) {
+    var f = FIELDS[fi];
+    var el = document.getElementById('ef-' + f.key);
+    if (!el) continue;
+    if (f.key === 'tanggal_mulai' || f.key === 'tanggal_berakhir') el.value = toInputDate(e[f.key]);
+    else el.value = e[f.key] || '';
+  }
+  disabledPrintBtns = { stck: null, form: null };
   applyFilters();
-  document.getElementById('entry-form-fields').scrollIntoView({ behavior:'smooth', block:'start' });
+  document.getElementById('entry-form-fields').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function clearFilters() {
-  document.getElementById('f-date-from').value='';
-  document.getElementById('f-date-to').value='';
-  document.getElementById('f-nopol').value='';
-  document.getElementById('f-nomor-urut').value='';
+  document.getElementById('f-date-from').value = '';
+  document.getElementById('f-date-to').value = '';
+  document.getElementById('f-nopol').value = '';
+  document.getElementById('f-nomor-urut').value = '';
   applyFilters();
 }
 
-// =====================================================
-// SPINNER NAVIGATION
-// =====================================================
+/* =================== SPINNER NAVIGATION =================== */
 function spinnerNav(type, dir) {
-  const list = type==='nopol'?allNopolValues:allNomorUrutValues;
-  const inputId = type==='nopol'?'f-nopol':'f-nomor-urut';
-  const el = document.getElementById(inputId);
-  const cur = el.value.trim().toUpperCase();
-  let idx = list.indexOf(cur);
-  if(idx===-1) idx=0; else idx+=dir;
-  idx = Math.max(0, Math.min(idx, list.length-1));
-  if(!list.length) return;
+  var list = type === 'nopol' ? allNopolValues : allNomorUrutValues;
+  var inputId = type === 'nopol' ? 'f-nopol' : 'f-nomor-urut';
+  var el = document.getElementById(inputId);
+  var cur = el.value.trim().toUpperCase();
+  var idx = list.indexOf(cur);
+  if (idx === -1) idx = 0; else idx += dir;
+  if (idx < 0) idx = 0;
+  if (idx >= list.length) idx = list.length - 1;
+  if (!list.length) return;
   el.value = list[idx];
   applyFilters();
 }
 
 function formSpinnerNav(dir) {
-  const el = document.getElementById('ef-nomor_urut_pendaftaran');
-  const cur = el.value.trim().toUpperCase();
-  let idx = allNomorUrutValues.indexOf(cur);
-  if(idx===-1) idx=0; else idx+=dir;
-  idx = Math.max(0, Math.min(idx, allNomorUrutValues.length-1));
-  if(!allNomorUrutValues.length) return;
+  var el = document.getElementById('ef-nomor_urut_pendaftaran');
+  var cur = el.value.trim().toUpperCase();
+  var idx = allNomorUrutValues.indexOf(cur);
+  if (idx === -1) idx = 0; else idx += dir;
+  if (idx < 0) idx = 0;
+  if (idx >= allNomorUrutValues.length) idx = allNomorUrutValues.length - 1;
+  if (!allNomorUrutValues.length) return;
   el.value = allNomorUrutValues[idx];
-  const entry = allEntries.find(e=>e.nomor_urut_pendaftaran===allNomorUrutValues[idx]);
-  if(entry) fillFormFromEntry(entry);
+  var entry = null;
+  for (var i = 0; i < allEntries.length; i++) {
+    if (allEntries[i].nomor_urut_pendaftaran === allNomorUrutValues[idx]) { entry = allEntries[i]; break; }
+  }
+  if (entry) fillFormFromEntry(entry);
 }
 
 function fillFormFromEntry(entry) {
-  FIELDS.forEach(f => {
-    const el = document.getElementById('ef-'+f.key);
-    if(!el) return;
-    if(f.key==='tanggal_mulai'||f.key==='tanggal_berakhir') el.value=toInputDate(entry[f.key]);
-    else el.value=entry[f.key]||'';
-  });
+  for (var fi = 0; fi < FIELDS.length; fi++) {
+    var f = FIELDS[fi];
+    var el = document.getElementById('ef-' + f.key);
+    if (!el) continue;
+    if (f.key === 'tanggal_mulai' || f.key === 'tanggal_berakhir') el.value = toInputDate(entry[f.key]);
+    else el.value = entry[f.key] || '';
+  }
 }
 
-// =====================================================
-// GENERATE ENTRY FORM
-// =====================================================
+/* =================== ENTRY FORM =================== */
 function generateEntryForm() {
-  document.getElementById('entry-form-fields').innerHTML = FIELDS.map(f => {
-    if(f.type==='spinner') return `<div><label class="inp-label">${f.label}</label><div class="spinner-btn w-full"><button onclick="formSpinnerNav(-1)">&#9660;</button><input type="text" id="ef-${f.key}" class="flex-1 font-arial" placeholder="${f.label}" style="font-weight:700"><button onclick="formSpinnerNav(1)">&#9650;</button></div></div>`;
-    if(f.type==='date') return `<div><label class="inp-label">${f.label}</label><input type="date" id="ef-${f.key}" class="inp font-arial" ${f.readonly?'readonly':''} ${f.key==='tanggal_mulai'?'onchange="onDateMulaiChange()"':''}></div>`;
-    return `<div><label class="inp-label">${f.label}</label><input type="text" id="ef-${f.key}" class="inp font-arial ${f.bold?'font-bold':''}" list="dl-${f.key}" placeholder="${f.label}"></div>`;
-  }).join('');
+  var html = '';
+  for (var i = 0; i < FIELDS.length; i++) {
+    var f = FIELDS[i];
+    if (f.type === 'spinner') {
+      html += '<div><label class="inp-label">' + f.label + '</label><div class="spinner-btn w-full"><button onclick="formSpinnerNav(-1)">&#9660;</button><input type="text" id="ef-' + f.key + '" class="flex-1 font-arial" placeholder="' + f.label + '" style="font-weight:700"><button onclick="formSpinnerNav(1)">&#9650;</button></div></div>';
+    } else if (f.type === 'date') {
+      var ro = f.readonly ? ' readonly' : '';
+      var oc = f.key === 'tanggal_mulai' ? ' onchange="onDateMulaiChange()"' : '';
+      html += '<div><label class="inp-label">' + f.label + '</label><input type="date" id="ef-' + f.key + '" class="inp font-arial"' + ro + oc + '></div>';
+    } else {
+      var boldCls = f.bold ? ' font-bold' : '';
+      html += '<div><label class="inp-label">' + f.label + '</label><input type="text" id="ef-' + f.key + '" class="inp font-arial' + boldCls + '" list="dl-' + f.key + '" placeholder="' + f.label + '"></div>';
+    }
+  }
+  document.getElementById('entry-form-fields').innerHTML = html;
 }
 
 function onDateMulaiChange() {
-  const m = document.getElementById('ef-tanggal_mulai').value;
-  if(!m) { document.getElementById('ef-tanggal_berakhir').value=''; return; }
-  const d = new Date(m); d.setDate(d.getDate()+14);
+  var m = document.getElementById('ef-tanggal_mulai').value;
+  if (!m) { document.getElementById('ef-tanggal_berakhir').value = ''; return; }
+  var d = new Date(m); d.setDate(d.getDate() + 14);
   document.getElementById('ef-tanggal_berakhir').value = toInputDate(d);
 }
 
-// =====================================================
-// SIMPAN KE ANTRIAN
-// =====================================================
-async function simpanKeAntrian() {
-  const nu = document.getElementById('ef-nomor_urut_pendaftaran').value.trim();
-  if(!nu) return toast('Nomor Urut Pendaftaran wajib diisi','err');
-  const row = { user_id: currentUser.id };
-  FIELDS.forEach(f => {
-    const el = document.getElementById('ef-'+f.key);
-    if(!el) return;
-    if(f.key==='tanggal_mulai'||f.key==='tanggal_berakhir') row[f.key]=el.value?new Date(el.value).toISOString().split('T')[0]:null;
-    else row[f.key]=el.value.trim().toUpperCase();
+/* =================== SIMPAN KE ANTRIAN =================== */
+function simpanKeAntrian() {
+  var nu = document.getElementById('ef-nomor_urut_pendaftaran').value.trim();
+  if (!nu) return toast('Nomor Urut Pendaftaran wajib diisi', 'err');
+  var row = { user_id: currentUser.id };
+  for (var i = 0; i < FIELDS.length; i++) {
+    var f = FIELDS[i];
+    var el = document.getElementById('ef-' + f.key);
+    if (!el) continue;
+    if (f.key === 'tanggal_mulai' || f.key === 'tanggal_berakhir') {
+      row[f.key] = el.value ? new Date(el.value).toISOString().split('T')[0] : null;
+    } else {
+      row[f.key] = el.value.trim().toUpperCase();
+    }
+  }
+  sb.from('entries').insert(row).then(function(result) {
+    if (result.error) return toast('Gagal menyimpan: ' + result.error.message, 'err');
+    toast('Disimpan ke antrian print', 'ok');
+    for (var j = 0; j < FIELDS.length; j++) {
+      var el2 = document.getElementById('ef-' + FIELDS[j].key);
+      if (el2) el2.value = '';
+    }
+    selectedHistoryId = null;
+    disabledPrintBtns = { stck: null, form: null };
+    loadAllData();
   });
-  const { error } = await sb.from('entries').insert(row);
-  if(error) return toast('Gagal menyimpan: '+error.message,'err');
-  toast('Disimpan ke antrian print','ok');
-  FIELDS.forEach(f => { const el=document.getElementById('ef-'+f.key); if(el) el.value=''; });
-  selectedHistoryId = null;
-  disabledPrintBtns = { stck:null, form:null };
-  await loadAllData();
 }
 
-// =====================================================
-// PRINT QUEUE
-// =====================================================
+/* =================== PRINT QUEUE =================== */
 function loadPrintQueue() {
-  printQueueData = allEntries.filter(e=>!(e.stck_printed&&e.form_printed));
+  printQueueData = [];
+  for (var i = 0; i < allEntries.length; i++) {
+    if (!(allEntries[i].stck_printed && allEntries[i].form_printed)) printQueueData.push(allEntries[i]);
+  }
   renderPrintQueue();
 }
 
 function renderPrintQueue() {
-  const c = document.getElementById('queue-list');
-  if(!printQueueData.length) { c.innerHTML='<p class="text-sm text-bark-400 py-2 text-center">Antrian kosong</p>'; return; }
-  c.innerHTML = printQueueData.map(e => {
-    const sd = disabledPrintBtns.stck===e.id;
-    const fd = disabledPrintBtns.form===e.id;
-    return `<div class="card-queue">
-      <div class="flex justify-between items-start mb-2">
-        <div><span class="font-bold text-bark-800 text-sm">${e.nomor_urut_pendaftaran}</span><span class="text-bark-400 text-xs ml-2">${e.nopol||'-'}</span></div>
-        <div class="flex gap-1">
-          <span class="text-xs px-1.5 py-0.5 rounded ${e.stck_printed?'bg-green-100 text-green-700':'bg-sand-200 text-bark-500'}">STCK ${e.stck_printed?'✓':'—'}</span>
-          <span class="text-xs px-1.5 py-0.5 rounded ${e.form_printed?'bg-green-100 text-green-700':'bg-sand-200 text-bark-500'}">FORM ${e.form_printed?'✓':'—'}</span>
-        </div>
-      </div>
-      <div class="flex gap-2">
-        <button onclick="doPrint('${e.id}','stck')" class="btn-primary btn-sm flex-1" ${sd?'disabled':''}>Print STCK</button>
-        <button onclick="doPrint('${e.id}','form')" class="btn-outline btn-sm flex-1" ${fd?'disabled style="opacity:.4;pointer-events:none"':''}>Print FORM</button>
-        ${currentUser&&currentUser.role==='admin'?`<button onclick="removeFromQueue('${e.id}')" class="btn-danger"><span class="material-symbols-outlined" style="font-size:14px">close</span></button>`:''}
-      </div>
-    </div>`;
-  }).join('');
+  var c = document.getElementById('queue-list');
+  if (!printQueueData.length) {
+    c.innerHTML = '<p class="text-sm text-bark-400 py-2 text-center">Antrian kosong</p>';
+    return;
+  }
+  var html = '';
+  for (var i = 0; i < printQueueData.length; i++) {
+    var e = printQueueData[i];
+    var sd = disabledPrintBtns.stck === e.id;
+    var fd = disabledPrintBtns.form === e.id;
+    html += '<div class="card-queue">' +
+      '<div class="flex justify-between items-start mb-2">' +
+        '<div><span class="font-bold text-bark-800 text-sm">' + e.nomor_urut_pendaftaran + '</span><span class="text-bark-400 text-xs ml-2">' + (e.nopol || '-') + '</span></div>' +
+        '<div class="flex gap-1">' +
+          '<span class="text-xs px-1.5 py-0.5 rounded ' + (e.stck_printed ? 'bg-green-100 text-green-700' : 'bg-sand-200 text-bark-500') + '">STCK ' + (e.stck_printed ? '&#10003;' : '—') + '</span>' +
+          '<span class="text-xs px-1.5 py-0.5 rounded ' + (e.form_printed ? 'bg-green-100 text-green-700' : 'bg-sand-200 text-bark-500') + '">FORM ' + (e.form_printed ? '&#10003;' : '—') + '</span>' +
+        '</div>' +
+      '</div>' +
+      '<div class="flex gap-2">' +
+        '<button onclick="doPrint(\'' + e.id + '\',\'stck\')" class="btn-primary btn-sm flex-1"' + (sd ? ' disabled' : '') + '>Print STCK</button>' +
+        '<button onclick="doPrint(\'' + e.id + '\',\'form\')" class="btn-outline btn-sm flex-1"' + (fd ? ' disabled style="opacity:.4;pointer-events:none"' : '') + '>Print FORM</button>' +
+        (currentUser && currentUser.role === 'admin' ? '<button onclick="removeFromQueue(\'' + e.id + '\')" class="btn-danger"><span class="material-symbols-outlined" style="font-size:14px">close</span></button>' : '') +
+      '</div>' +
+    '</div>';
+  }
+  c.innerHTML = html;
 }
 
-async function doPrint(entryId, layoutType) {
-  const e = allEntries.find(x=>x.id===entryId);
-  if(!e) return;
+function doPrint(entryId, layoutType) {
+  var e = null;
+  for (var i = 0; i < allEntries.length; i++) { if (allEntries[i].id === entryId) { e = allEntries[i]; break; } }
+  if (!e) return;
   disabledPrintBtns[layoutType] = entryId;
   renderPrintQueue();
-  const pa = document.getElementById('print-area');
-  pa.style.display='block';
-  pa.className = layoutType==='form'?'form-mode':'';
-  pa.innerHTML = layoutType==='stck'?generateSTCKLayout(e):generateFORMLayout(e);
-  setTimeout(() => {
+  var pa = document.getElementById('print-area');
+  pa.style.display = 'block';
+  pa.className = layoutType === 'form' ? 'form-mode' : '';
+  pa.innerHTML = layoutType === 'stck' ? generateSTCKLayout(e) : generateFORMLayout(e);
+  setTimeout(function() {
     window.print();
-    setTimeout(async () => {
-      pa.style.display='none'; pa.innerHTML='';
-      const uf = layoutType==='stck'?'stck_printed':'form_printed';
-      const { error } = await sb.from('entries').update({[uf]:true}).eq('id',entryId);
-      if(error) toast('Gagal update status print','err');
-      else toast('Print '+layoutType.toUpperCase()+' berhasil','ok');
-      await loadAllData();
+    setTimeout(function() {
+      pa.style.display = 'none'; pa.innerHTML = '';
+      var uf = layoutType === 'stck' ? 'stck_printed' : 'form_printed';
+      var upd = {}; upd[uf] = true;
+      sb.from('entries').update(upd).eq('id', entryId).then(function(result) {
+        if (result.error) toast('Gagal update status print', 'err');
+        else toast('Print ' + layoutType.toUpperCase() + ' berhasil', 'ok');
+        loadAllData();
+      });
     }, 500);
   }, 300);
 }
 
-async function removeFromQueue(entryId) {
-  if(currentUser.role!=='admin') return;
-  const { error } = await sb.from('entries').delete().eq('id',entryId);
-  if(error) toast('Gagal menghapus','err'); else toast('Dihapus dari antrian','ok');
-  await loadAllData();
-}
-
-// =====================================================
-// PRINT LAYOUT — STCK
-// =====================================================
-function generateSTCKLayout(e) {
-  const r = (l,v) => `<div class="stck-row"><span class="lbl">${l}</span><span class="stck-val">${v||'-'}</span></div>`;
-  return `<div class="stck-layout">
-    <div class="stck-header">SURAT TANDA CEK<br>KENDARAAN (STCK)</div>
-    ${r('No. Urut',e.nomor_urut_pendaftaran)}${r('NOPOL',e.nopol)}
-    <div class="stck-sep"></div>
-    <div style="font-weight:bold;margin-bottom:1mm">Penanggung Jawab:</div>
-    ${r('',e.penanggung_jawab)}${r('Alamat PJ',e.alamat_penanggung_jawab)}
-    <div class="stck-sep"></div>
-    ${r('Alamat Badan Usaha',e.alamat_badan_usaha)}${r('Kode Lokasi',e.kode_lokasi)}
-    <div class="stck-sep"></div>
-    <div style="font-weight:bold;margin-bottom:1mm">Masa Laku:</div>
-    ${r('Dari',formatDate(e.tanggal_mulai))}${r('Sampai',formatDate(e.tanggal_berakhir))}
-    <div class="stck-sep"></div>
-    <div style="font-weight:bold;margin-bottom:1mm">Data Kendaraan:</div>
-    ${r('Merk',e.merk)}${r('Tipe',e.tipe)}${r('Jenis',e.jenis)}${r('Model',e.model)}
-    ${r('Tahun',e.tahun_pembuatan)}${r('Isi Silinder',e.isi_silinder)}${r('No. Rangka',e.nomor_rangka)}
-    ${r('No. Mesin',e.nomor_mesin)}${r('Bahan Bakar',e.bahan_bakar)}${r('Warna',e.warna)}
-    <div class="stck-sep"></div>
-    ${r('Tujuan Penggunaan',e.tujuan_penggunaan)}${r('Asal',e.asal)}${r('Tujuan',e.tujuan)}
-    <div class="stck-sep"></div>
-    <div style="text-align:center;margin-top:3mm;font-size:9px">Dicetak: ${new Date().toLocaleString('id-ID')}</div>
-  </div>`;
-}
-
-// =====================================================
-// PRINT LAYOUT — FORM
-// =====================================================
-function generateFORMLayout(e) {
-  const p = (l,v) => `<div class="form-pair"><span class="flbl">${l}</span><span class="fval">${v||'-'}</span></div>`;
-  return `<div class="form-layout">
-    <div class="form-header">FORM ENTRY STCK</div>
-    ${p('No.Urut',e.nomor_urut_pendaftaran)}${p('NOPOL',e.nopol)}
-    <div class="form-hr"></div>
-    <div class="form-section-title">PENANGGUNG JAWAB</div>
-    ${p('Nama',e.penanggung_jawab)}${p('Al.PJ',e.alamat_penanggung_jawab)}${p('Al.BU',e.alamat_badan_usaha)}${p('Kode',e.kode_lokasi)}
-    <div class="form-hr"></div>
-    <div class="form-section-title">MASA LAKU</div>
-    ${p('Mulai',formatDate(e.tanggal_mulai))}${p('Sampai',formatDate(e.tanggal_berakhir))}
-    <div class="form-hr"></div>
-    <div class="form-section-title">KENDARAAN</div>
-    ${p('Merk',e.merk)}${p('Tipe',e.tipe)}${p('Jenis',e.jenis)}${p('Model',e.model)}
-    ${p('Tahun',e.tahun_pembuatan)}${p('Isi Sil.',e.isi_silinder)}${p('No.Rangka',e.nomor_rangka)}
-    ${p('No.Mesin',e.nomor_mesin)}${p('BBM',e.bahan_bakar)}${p('Warna',e.warna)}
-    <div class="form-hr"></div>
-    ${p('Tujuan',e.tujuan_penggunaan)}${p('Asal',e.asal)}${p('Tujuan',e.tujuan)}
-    <div class="form-hr"></div>
-    <div style="text-align:center;font-size:8px;margin-top:1mm">Dicetak: ${new Date().toLocaleString('id-ID')}</div>
-  </div>`;
-}
-
-// =====================================================
-// ADMIN — KELOLA USER
-// =====================================================
-async function loadAdminUsers() {
-  if(!currentUser||currentUser.role!=='admin') return;
-  const { data, error } = await sb.from('profiles').select('*').order('created_at',{ascending:false});
-  if(error) return toast('Gagal memuat user','err');
-  const c = document.getElementById('admin-user-list');
-  if(!data||!data.length) { c.innerHTML='<p class="text-sm text-bark-400">Tidak ada user</p>'; return; }
-  c.innerHTML = data.map(u => `<div class="flex items-center justify-between p-3 rounded-lg border border-sand-200 bg-cream-50">
-    <div><div class="text-sm font-semibold">${u.email}</div><div class="text-xs text-bark-400">IP: ${u.current_ip||'-'} | Role: ${u.role}</div></div>
-    <div class="flex items-center gap-2">
-      <span class="pulse-dot ${u.is_active?'green':'red'}"></span>
-      ${u.role==='user'?`
-        <button onclick="toggleUserActive('${u.id}',${!u.is_active})" class="btn-sm ${u.is_active?'btn-danger':'btn-primary'}">${u.is_active?'Non-Aktif':'Aktif'}</button>
-        <button onclick="promoteToAdmin('${u.id}')" class="btn-outline btn-sm text-xs" title="Jadikan Admin"><span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">shield</span></button>
-      `:`<span class="text-xs font-bold text-bark-500 px-2">ADMIN</span>`}
-    </div>
-  </div>`).join('');
-}
-
-async function toggleUserActive(userId, setActive) {
-  const { error } = await sb.from('profiles').update({is_active:setActive}).eq('id',userId);
-  if(error) toast('Gagal update status','err'); else toast(setActive?'User diaktifkan':'User dinonaktifkan','ok');
-  loadAdminUsers();
-}
-
-async function promoteToAdmin(userId) {
-  if(!confirm('Jadikan user ini sebagai Admin?')) return;
-  const { error } = await sb.from('profiles').update({role:'admin'}).eq('id',userId);
-  if(error) toast('Gagal update role','err'); else toast('User dipromosikan jadi Admin','ok');
-  loadAdminUsers();
-}
-
-// =====================================================
-// ADMIN — HISTORI ACTIONS
-// =====================================================
-async function hideFromUser(entryId) {
-  const { error } = await sb.from('entries').update({hidden_from_user:true}).eq('id',entryId);
-  if(error) toast('Gagal menyembunyikan','err'); else toast('Disembunyikan dari User','ok');
-  await loadAllData();
-}
-
-async function deleteEntry(entryId) {
-  if(!confirm('Hapus permanen data ini?')) return;
-  const { error } = await sb.from('entries').delete().eq('id',entryId);
-  if(error) toast('Gagal menghapus','err'); else toast('Dihapus permanen','ok');
-  await loadAllData();
-}
-
-// =====================================================
-// EXPORT SPREADSHEET
-// =====================================================
-function exportSheet() {
-  const entries = getFilteredEntries();
-  if(!entries.length) return toast('Tidak ada data untuk di-export','err');
-  const headers = FIELDS.map(f=>f.label);
-  headers.push('Tanggal Entry','STCK Printed','FORM Printed');
-  const rows = entries.map(e => {
-    const row = FIELDS.map(f => {
-      if(f.key==='tanggal_mulai'||f.key==='tanggal_berakhir') return formatDate(e[f.key]);
-      return e[f.key]||'';
-    });
-    row.push(formatDate(e.created_at), e.stck_printed?'Ya':'Tidak', e.form_printed?'Ya':'Tidak');
-    return row;
+function removeFromQueue(entryId) {
+  if (currentUser.role !== 'admin') return;
+  sb.from('entries').delete().eq('id', entryId).then(function(result) {
+    if (result.error) toast('Gagal menghapus', 'err');
+    else toast('Dihapus dari antrian', 'ok');
+    loadAllData();
   });
-  const ws = XLSX.utils.aoa_to_sheet([headers,...rows]);
-  ws['!cols'] = headers.map(()=>({wch:22}));
-  const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, 'Histori Entry STCK');
-  XLSX.writeFile(wb, 'Entry_STCK_'+new Date().toISOString().split('T')[0]+'.xlsx');
-  toast('File Excel berhasil diunduh','ok');
 }
 
-// =====================================================
-// EVENT LISTENERS
-// =====================================================
+/* =================== PRINT LAYOUT STCK =================== */
+function generateSTCKLayout(e) {
+  function r(l, v) { return '<div class="stck-row"><span class="lbl">' + l + '</span><span class="stck-val">' + (v || '-') + '</span></div>'; }
+  return '<div class="stck-layout">' +
+    '<div class="stck-header">SURAT TANDA CEK<br>KENDARAAN (STCK)</div>' +
+    r('No. Urut', e.nomor_urut_pendaftaran) + r('NOPOL', e.nopol) +
+    '<div class="stck-sep"></div>' +
+    '<div style="font-weight:bold;margin-bottom:1mm">Penanggung Jawab:</div>' +
+    r('', e.penanggung_jawab) + r('Alamat PJ', e.alamat_penanggung_jawab) +
+    '<div class="stck-sep"></div>' +
+    r('Alamat Badan Usaha', e.alamat_badan_usaha) + r('Kode Lokasi', e.kode_lokasi) +
+    '<div class="stck-sep"></div>' +
+    '<div style="font-weight:bold;margin-bottom:1mm">Masa Laku:</div>' +
+    r('Dari', formatDate(e.tanggal_mulai)) + r('Sampai', formatDate(e.tanggal_berakhir)) +
+    '<div class="stck-sep"></div>' +
+    '<div style="font-weight:bold;margin-bottom:1mm">Data Kendaraan:</div>' +
+    r('Merk', e.merk) + r('Tipe', e.tipe) + r('Jenis', e.jenis) + r('Model', e.model) +
+    r('Tahun', e.tahun_pembuatan) + r('Isi Silinder', e.isi_silinder) + r('No. Rangka', e.nomor_rangka) +
+    r('No. Mesin', e.nomor_mesin) + r('Bahan Bakar', e.bahan_bakar) + r('Warna', e.warna) +
+    '<div class="stck-sep"></div>' +
+    r('Tujuan Penggunaan', e.tujuan_penggunaan) + r('Asal', e.asal) + r('Tujuan', e.tujuan) +
+    '<div class="stck-sep"></div>' +
+    '<div style="text-align:center;margin-top:3mm;font-size:9px">Dicetak: ' + new Date().toLocaleString('id-ID') + '</div>' +
+  '</div>';
+}
+
+/* =================== PRINT LAYOUT FORM =================== */
+function generateFORMLayout(e) {
+  function p(l, v) { return '<div class="form-pair"><span class="flbl">' + l + '</span><span class="fval">' + (v || '-') + '</span></div>'; }
+  return '<div class="form-layout">' +
+    '<div class="form-header">FORM ENTRY STCK</div>' +
+    p('No.Urut', e.nomor_urut_pendaftaran) + p('NOPOL', e.nopol) +
+    '<div class="form-hr"></div><div class="form-section-title">PENANGGUNG JAWAB</div>' +
+    p('Nama', e.penanggung_jawab) + p('Al.PJ', e.alamat_penanggung_jawab) + p('Al.BU', e.alamat_badan_usaha) + p('Kode', e.kode_lokasi) +
+    '<div class="form-hr"></div><div class="form-section-title">MASA LAKU</div>' +
+    p('Mulai', formatDate(e.tanggal_mulai)) + p('Sampai', formatDate(e.tanggal_berakhir)) +
+    '<div class="form-hr"></div><div class="form-section-title">KENDARAAN</div>' +
+    p('Merk', e.merk) + p('Tipe', e.tipe) + p('Jenis', e.jenis) + p('Model', e.model) +
+    p('Tahun', e.tahun_pembuatan) + p('Isi Sil.', e.isi_silinder) + p('No.Rangka', e.nomor_rangka) +
+    p('No.Mesin', e.nomor_mesin) + p('BBM', e.bahan_bakar) + p('Warna', e.warna) +
+    '<div class="form-hr"></div>' +
+    p('Tujuan', e.tujuan_penggunaan) + p('Asal', e.asal) + p('Tujuan', e.tujuan) +
+    '<div class="form-hr"></div>' +
+    '<div style="text-align:center;font-size:8px;margin-top:1mm">Dicetak: ' + new Date().toLocaleString('id-ID') + '</div>' +
+  '</div>';
+}
+
+/* =================== ADMIN KELOLA USER =================== */
+function loadAdminUsers() {
+  if (!currentUser || currentUser.role !== 'admin') return;
+  sb.from('profiles').select('*').order('created_at', { ascending: false }).then(function(result) {
+    if (result.error) return toast('Gagal memuat user', 'err');
+    var data = result.data || [];
+    var c = document.getElementById('admin-user-list');
+    if (!data.length) { c.innerHTML = '<p class="text-sm text-bark-400">Tidak ada user</p>'; return; }
+    var html = '';
+    for (var i = 0; i < data.length; i++) {
+      var u = data[i];
+      var btns = '';
+      if (u.role === 'user') {
+        btns = '<button onclick="toggleUserActive(\'' + u.id + '\',' + !u.is_active + ')" class="btn-sm ' + (u.is_active ? 'btn-danger' : 'btn-primary') + '">' + (u.is_active ? 'Non-Aktif' : 'Aktif') + '</button>' +
+          '<button onclick="promoteToAdmin(\'' + u.id + '\')" class="btn-outline btn-sm text-xs" title="Jadikan Admin"><span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">shield</span></button>';
+      } else {
+        btns = '<span class="text-xs font-bold text-bark-500 px-2">ADMIN</span>';
+      }
+      html += '<div class="flex items-center justify-between p-3 rounded-lg border border-sand-200 bg-cream-50">' +
+        '<div><div class="text-sm font-semibold">' + u.email + '</div><div class="text-xs text-bark-400">IP: ' + (u.current_ip || '-') + ' | Role: ' + u.role + '</div></div>' +
+        '<div class="flex items-center gap-2"><span class="pulse-dot ' + (u.is_active ? 'green' : 'red') + '"></span>' + btns + '</div>' +
+      '</div>';
+    }
+    c.innerHTML = html;
+  });
+}
+
+function toggleUserActive(userId, setActive) {
+  sb.from('profiles').update({ is_active: setActive }).eq('id', userId).then(function(result) {
+    if (result.error) toast('Gagal update status', 'err');
+    else toast(setActive ? 'User diaktifkan' : 'User dinonaktifkan', 'ok');
+    loadAdminUsers();
+  });
+}
+
+function promoteToAdmin(userId) {
+  if (!confirm('Jadikan user ini sebagai Admin?')) return;
+  sb.from('profiles').update({ role: 'admin' }).eq('id', userId).then(function(result) {
+    if (result.error) toast('Gagal update role', 'err');
+    else toast('User dipromosikan jadi Admin', 'ok');
+    loadAdminUsers();
+  });
+}
+
+/* =================== ADMIN HISTORI =================== */
+function hideFromUser(entryId) {
+  sb.from('entries').update({ hidden_from_user: true }).eq('id', entryId).then(function(result) {
+    if (result.error) toast('Gagal menyembunyikan', 'err');
+    else toast('Disembunyikan dari User', 'ok');
+    loadAllData();
+  });
+}
+
+function deleteEntry(entryId) {
+  if (!confirm('Hapus permanen data ini?')) return;
+  sb.from('entries').delete().eq('id', entryId).then(function(result) {
+    if (result.error) toast('Gagal menghapus', 'err');
+    else toast('Dihapus permanen', 'ok');
+    loadAllData();
+  });
+}
+
+/* =================== EXPORT =================== */
+function exportSheet() {
+  var entries = getFilteredEntries();
+  if (!entries.length) return toast('Tidak ada data untuk di-export', 'err');
+  var headers = [];
+  for (var i = 0; i < FIELDS.length; i++) headers.push(FIELDS[i].label);
+  headers.push('Tanggal Entry', 'STCK Printed', 'FORM Printed');
+  var rows = [];
+  for (var i = 0; i < entries.length; i++) {
+    var e = entries[i];
+    var row = [];
+    for (var j = 0; j < FIELDS.length; j++) {
+      var k = FIELDS[j].key;
+      if (k === 'tanggal_mulai' || k === 'tanggal_berakhir') row.push(formatDate(e[k]));
+      else row.push(e[k] || '');
+    }
+    row.push(formatDate(e.created_at), e.stck_printed ? 'Ya' : 'Tidak', e.form_printed ? 'Ya' : 'Tidak');
+    rows.push(row);
+  }
+  var ws = XLSX.utils.aoa_to_sheet([headers].concat(rows));
+  ws['!cols'] = [];
+  for (var i = 0; i < headers.length; i++) ws['!cols'].push({ wch: 22 });
+  var wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Histori Entry STCK');
+  XLSX.writeFile(wb, 'Entry_STCK_' + new Date().toISOString().split('T')[0] + '.xlsx');
+  toast('File Excel berhasil diunduh', 'ok');
+}
+
+/* =================== EVENT LISTENERS =================== */
 document.getElementById('f-date-from').addEventListener('change', applyFilters);
 document.getElementById('f-date-to').addEventListener('change', applyFilters);
-document.getElementById('login-pass').addEventListener('keydown', e => { if(e.key==='Enter') doLogin(); });
-document.getElementById('login-email').addEventListener('keydown', e => { if(e.key==='Enter') doLogin(); });
-document.getElementById('reg-pass').addEventListener('keydown', e => { if(e.key==='Enter') doRegister(); });
+document.getElementById('login-pass').addEventListener('keydown', function(e) { if (e.key === 'Enter') doLogin(); });
+document.getElementById('login-email').addEventListener('keydown', function(e) { if (e.key === 'Enter') doLogin(); });
+document.getElementById('reg-pass').addEventListener('keydown', function(e) { if (e.key === 'Enter') doRegister(); });
 
-// =====================================================
-// INISIALISASI APP
-// =====================================================
+/* =================== INISIALISASI =================== */
 generateEntryForm();
 
-(async function init() {
-  const { data: { session } } = await sb.auth.getSession();
-  if (!session) return; // tetap di halaman login
-
-  const { data: profile } = await sb.from('profiles').select('*').eq('id', session.user.id).single();
-  if (!profile) { await sb.auth.signOut(); return; }
-
-  currentUser = profile;
-
-  // Cek apakah ada PIN yang masih valid (untuk handle refresh)
-  const { data: pendingPin } = await sb.from('login_pins').select('*')
-    .eq('user_id', profile.id)
+sb.auth.getSession().then(function(result) {
+  var session = result.data.session;
+  if (!session) return;
+  return sb.from('profiles').select('*').eq('id', session.user.id).single();
+}).then(function(result) {
+  if (!result || !result.data) return;
+  currentUser = result.data;
+  return sb.from('login_pins').select('*')
+    .eq('user_id', currentUser.id)
     .eq('used', false)
     .gt('expires_at', new Date().toISOString())
     .lt('attempts', 3)
     .order('created_at', { ascending: false })
     .limit(1)
     .maybeSingle();
-
-  if (pendingPin) {
-    // Ada PIN yang masih valid, tampilkan halaman PIN tanpa kirim ulang
-    pendingPinId = pendingPin.id;
+}).then(function(result) {
+  if (!currentUser) return;
+  if (result && result.data) {
+    pendingPinId = result.data.id;
     showPage('page-pin');
     setupPinInputs();
-    document.getElementById('pin-info').textContent = 'Masukkan PIN yang dikirim ke ' + profile.email;
+    document.getElementById('pin-info').textContent = 'Masukkan PIN yang dikirim ke ' + currentUser.email;
     startResendCooldown();
   } else {
-    // Tidak ada PIN valid, mulai 2FA baru
-    await initiate2FA();
+    initiate2FA();
   }
-})();
+});
 </script>
 </body>
 </html>

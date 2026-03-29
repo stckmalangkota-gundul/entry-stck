@@ -18,34 +18,28 @@ tailwind.config={theme:{extend:{fontFamily:{poppins:['Poppins','sans-serif'],ari
 body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
 .page{display:none}.page.active{display:block}
 .font-arial{font-family:Arial,sans-serif}
-
 #toast-box{position:fixed;top:16px;right:16px;z-index:9999;display:flex;flex-direction:column;gap:8px;pointer-events:none}
 .toast-item{padding:12px 20px;border-radius:10px;color:#fff;font-size:14px;font-weight:500;animation:slideIn .3s ease,fadeOut .4s ease 2.6s forwards;box-shadow:0 4px 20px rgba(0,0,0,.15);pointer-events:auto}
 .toast-ok{background:#2D6A4F}.toast-err{background:#C1292E}.toast-info{background:#8B5E3C}
 @keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
 @keyframes fadeOut{to{opacity:0;transform:translateY(-10px)}}
-
 .spinner-btn{display:inline-flex;align-items:center;border:1px solid #D4C5B3;border-radius:8px;overflow:hidden;background:#fff}
 .spinner-btn input{border:none;outline:none;text-align:center;font-family:Arial,sans-serif;font-size:14px;font-weight:700;padding:8px 4px;min-width:100px;background:transparent;text-transform:none}
 .spinner-btn button{border:none;background:#F5EDE4;padding:8px 12px;cursor:pointer;font-size:18px;line-height:1;transition:background .15s}
 .spinner-btn button:hover{background:#E8DDD0}
 .spinner-btn button:active{background:#D4C5B3}
-
 .card-entry{background:#fff;border:1px solid #E8DDD0;border-radius:12px;padding:14px;cursor:pointer;transition:all .2s}
 .card-entry:hover{border-color:#8B5E3C;box-shadow:0 4px 16px rgba(139,94,60,.12);transform:translateY(-2px)}
 .card-entry.selected{border-color:#6B4226;background:#FFF8F0;box-shadow:0 0 0 2px #8B5E3C}
 .card-queue{background:#fff;border:1px solid #E8DDD0;border-radius:10px;padding:12px}
-
 .scroll-h{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .scroll-h::-webkit-scrollbar{height:6px}
 .scroll-h::-webkit-scrollbar-thumb{background:#D4C5B3;border-radius:3px}
-
 .inp{width:100%;padding:10px 12px;border:1px solid #D4C5B3;border-radius:8px;font-family:Arial,sans-serif;font-size:14px;background:#fff;outline:none;transition:border-color .2s}
 .inp:focus{border-color:#8B5E3C}
 .inp[readonly]{background:#F5EDE4;cursor:default}
 #entry-form-fields .inp,
 #entry-form-fields .spinner-btn input{text-transform:uppercase}
-
 .btn-primary{background:#6B4226;color:#fff;font-weight:600;border:none;border-radius:10px;padding:12px 24px;cursor:pointer;transition:all .2s;font-size:15px}
 .btn-primary:hover{background:#4A2E1A;transform:translateY(-1px);box-shadow:0 4px 16px rgba(74,46,26,.3)}
 .btn-primary:active{transform:translateY(0)}
@@ -56,15 +50,12 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
 .btn-sm{padding:6px 14px;font-size:12px;border-radius:6px}
 .btn-danger{background:#C1292E;color:#fff;font-weight:600;border:none;border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px;transition:background .2s}
 .btn-danger:hover{background:#8B0000}
-
 .section-box{background:#fff;border:1px solid #E8DDD0;border-radius:14px;padding:18px;margin-bottom:16px}
 .section-title{font-size:16px;font-weight:700;color:#4A2E1A;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-
 .pulse-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
 .pulse-dot.green{background:#2D6A4F;animation:pulse 1.5s infinite}
 .pulse-dot.red{background:#C1292E;animation:pulse 1.5s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
-
 .pin-box{width:48px;height:58px;text-align:center;font-size:24px;font-weight:800;font-family:Arial,sans-serif;border:2px solid #D4C5B3;border-radius:12px;outline:none;background:#fff;transition:all .2s;color:#2D1B0E;text-transform:none}
 .pin-box:focus{border-color:#6B4226;box-shadow:0 0 0 3px rgba(107,66,38,.15)}
 .pin-box.error{border-color:#C1292E;animation:shake .4s ease}
@@ -73,12 +64,9 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
 .pin-box:nth-child(1){animation-delay:.05s}.pin-box:nth-child(2){animation-delay:.1s}
 .pin-box:nth-child(3){animation-delay:.15s}.pin-box:nth-child(4){animation-delay:.2s}.pin-box:nth-child(5){animation-delay:.25s}
 @keyframes pinIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-
 .spin-load{width:20px;height:20px;border:3px solid #D4C5B3;border-top-color:#6B4226;border-radius:50%;animation:spin .7s linear infinite;display:inline-block;vertical-align:middle}
 @keyframes spin{to{transform:rotate(360deg)}}
-
 .inp-label{font-size:11px;font-weight:600;color:#6B4226;margin-bottom:4px;display:block;letter-spacing:.3px}
-
 @media print{
   body *{visibility:hidden!important}
   #print-area,#print-area *{visibility:visible!important}
@@ -101,10 +89,8 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
 </style>
 </head>
 <body>
-
 <div id="toast-box"></div>
 
-<!-- ===================== HALAMAN LOGIN ===================== -->
 <div id="page-login" class="page active">
   <div class="min-h-screen flex items-center justify-center px-4 py-8">
     <div class="w-full max-w-sm">
@@ -134,7 +120,6 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
   </div>
 </div>
 
-<!-- ===================== HALAMAN REGISTER ===================== -->
 <div id="page-register" class="page">
   <div class="min-h-screen flex items-center justify-center px-4 py-8">
     <div class="w-full max-w-sm">
@@ -161,7 +146,6 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
   </div>
 </div>
 
-<!-- ===================== HALAMAN VERIFIKASI PIN 2FA ===================== -->
 <div id="page-pin" class="page">
   <div class="min-h-screen flex items-center justify-center px-4 py-8">
     <div class="w-full max-w-sm text-center">
@@ -173,15 +157,12 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
       <div class="flex justify-center gap-3 mb-2" id="pin-inputs"></div>
       <p id="pin-error" class="text-sm text-red-600 font-semibold mb-2 hidden"></p>
       <p id="pin-info" class="text-sm text-bark-400 mb-5 min-h-[20px]"><span class="spin-load"></span> Mengirim PIN...</p>
-      <button id="btn-resend-pin" onclick="resendPIN()" class="btn-outline w-full mb-3 hidden" disabled>
-        Kirim Ulang PIN (<span id="resend-timer">60</span>)
-      </button>
+      <button id="btn-resend-pin" onclick="resendPIN()" class="btn-outline w-full mb-3 hidden" disabled>Kirim Ulang PIN (<span id="resend-timer">60</span>)</button>
       <button onclick="cancelPIN()" class="text-sm text-bark-400 hover:text-bark-600 underline">Kembali ke Login</button>
     </div>
   </div>
 </div>
 
-<!-- ===================== HALAMAN ENTRY ===================== -->
 <div id="page-entry" class="page">
   <div class="sticky top-0 z-50 bg-cream-100/95 backdrop-blur border-b border-sand-200 px-4 py-3 flex items-center justify-between">
     <div class="flex items-center gap-3">
@@ -191,8 +172,6 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
     <span id="user-email-display" class="text-xs text-bark-400 hidden sm:inline"></span>
   </div>
   <div class="max-w-2xl mx-auto px-4 py-4">
-
-    <!-- NOTICE NON-AKTIF -->
     <div id="notice-inactive" class="section-box text-center py-10 hidden">
       <div class="pulse-dot red mx-auto mb-4"></div>
       <p class="font-bold text-lg text-bark-800 mb-1">Status: Non-Aktif</p>
@@ -203,112 +182,47 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
       </a>
       <button onclick="doLogout()" class="btn-outline w-full">Logout</button>
     </div>
-
-    <!-- CONTENT AKTIF -->
     <div id="content-active" class="hidden">
-
-      <!-- FILTER -->
       <div class="section-box">
-        <div class="section-title">
-          <span class="material-symbols-outlined text-bark-500" style="font-size:20px">filter_list</span>
-          Filter Pencarian
-        </div>
-        <div class="mb-3">
-          <label class="inp-label">CARI RENTANG TANGGAL</label>
-          <div class="flex gap-2 items-center">
-            <input type="date" id="f-date-from" class="inp" style="font-family:Arial">
-            <span class="text-bark-400 text-sm">s/d</span>
-            <input type="date" id="f-date-to" class="inp" style="font-family:Arial">
-          </div>
-        </div>
-        <div class="mb-3">
-          <label class="inp-label">CARI DATA NOPOL</label>
-          <div class="spinner-btn w-full">
-            <button onclick="spinnerNav('nopol',-1)">&#9660;</button>
-            <input type="text" id="f-nopol" class="flex-1" placeholder="Ketik atau gunakan panah" oninput="applyFilters()">
-            <button onclick="spinnerNav('nopol',1)">&#9650;</button>
-          </div>
-        </div>
-        <div class="mb-2">
-          <label class="inp-label">CARI NOMOR URUT PENDAFTARAN</label>
-          <div class="spinner-btn w-full">
-            <button onclick="spinnerNav('nomor_urut',-1)">&#9660;</button>
-            <input type="text" id="f-nomor-urut" class="flex-1" placeholder="Ketik atau gunakan panah" oninput="applyFilters()">
-            <button onclick="spinnerNav('nomor_urut',1)">&#9650;</button>
-          </div>
-        </div>
+        <div class="section-title"><span class="material-symbols-outlined text-bark-500" style="font-size:20px">filter_list</span>Filter Pencarian</div>
+        <div class="mb-3"><label class="inp-label">CARI RENTANG TANGGAL</label><div class="flex gap-2 items-center"><input type="date" id="f-date-from" class="inp" style="font-family:Arial"><span class="text-bark-400 text-sm">s/d</span><input type="date" id="f-date-to" class="inp" style="font-family:Arial"></div></div>
+        <div class="mb-3"><label class="inp-label">CARI DATA NOPOL</label><div class="spinner-btn w-full"><button onclick="spinnerNav('nopol',-1)">&#9660;</button><input type="text" id="f-nopol" class="flex-1" placeholder="Ketik atau gunakan panah" oninput="applyFilters()"><button onclick="spinnerNav('nopol',1)">&#9650;</button></div></div>
+        <div class="mb-2"><label class="inp-label">CARI NOMOR URUT PENDAFTARAN</label><div class="spinner-btn w-full"><button onclick="spinnerNav('nomor_urut',-1)">&#9660;</button><input type="text" id="f-nomor-urut" class="flex-1" placeholder="Ketik atau gunakan panah" oninput="applyFilters()"><button onclick="spinnerNav('nomor_urut',1)">&#9650;</button></div></div>
         <button onclick="clearFilters()" class="text-xs text-bark-400 hover:text-bark-600 underline mt-1">Reset Filter</button>
       </div>
-
-      <!-- HISTORY -->
       <div class="section-box">
-        <div class="section-title justify-between">
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-bark-500" style="font-size:20px">history</span>
-            List Histori
-          </div>
-          <div class="flex items-center gap-2">
-            <span id="history-count" class="text-xs font-bold bg-sand-200 text-bark-600 px-2 py-0.5 rounded-full">0</span>
-            <button id="btn-export" onclick="exportSheet()" class="btn-outline btn-sm hidden">
-              <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">download</span> Export
-            </button>
-          </div>
-        </div>
-        <div id="history-list" class="scroll-h flex gap-3 pb-2" style="min-height:60px">
-          <p class="text-sm text-bark-400 py-4 text-center w-full">Belum ada histori</p>
-        </div>
+        <div class="section-title justify-between"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-bark-500" style="font-size:20px">history</span>List Histori</div><div class="flex items-center gap-2"><span id="history-count" class="text-xs font-bold bg-sand-200 text-bark-600 px-2 py-0.5 rounded-full">0</span><button id="btn-export" onclick="exportSheet()" class="btn-outline btn-sm hidden"><span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">download</span> Export</button></div></div>
+        <div id="history-list" class="scroll-h flex gap-3 pb-2" style="min-height:60px"><p class="text-sm text-bark-400 py-4 text-center w-full">Belum ada histori</p></div>
       </div>
-
-      <!-- ENTRY FORM -->
       <div class="section-box">
-        <div class="section-title">
-          <span class="material-symbols-outlined text-bark-500" style="font-size:20px">edit_note</span>
-          Entry Data Baru
-        </div>
+        <div class="section-title"><span class="material-symbols-outlined text-bark-500" style="font-size:20px">edit_note</span>Entry Data Baru</div>
         <div id="entry-form-fields" class="space-y-3"></div>
         <button id="btn-simpan-antrian" onclick="simpanKeAntrian()" class="btn-primary w-full mt-4">SIMPAN KE ANTRIAN</button>
       </div>
-
-      <!-- PRINT QUEUE -->
       <div class="section-box">
-        <div class="section-title">
-          <span class="material-symbols-outlined text-bark-500" style="font-size:20px">print</span>
-          List Antrian Print
-        </div>
-        <div id="queue-list" class="space-y-3" style="min-height:40px">
-          <p class="text-sm text-bark-400 py-2 text-center">Antrian kosong</p>
-        </div>
+        <div class="section-title"><span class="material-symbols-outlined text-bark-500" style="font-size:20px">print</span>List Antrian Print</div>
+        <div id="queue-list" class="space-y-3" style="min-height:40px"><p class="text-sm text-bark-400 py-2 text-center">Antrian kosong</p></div>
       </div>
-
-      <!-- ADMIN PANEL -->
       <div id="sec-admin" class="hidden">
         <div class="section-box">
-          <div class="section-title">
-            <span class="material-symbols-outlined text-bark-500" style="font-size:20px">admin_panel_settings</span>
-            Panel Admin — Kelola User
-          </div>
+          <div class="section-title"><span class="material-symbols-outlined text-bark-500" style="font-size:20px">admin_panel_settings</span>Panel Admin — Kelola User</div>
           <div id="admin-user-list" class="space-y-2"></div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
 
-<!-- Print Area -->
 <div id="print-area" style="display:none"></div>
-<!-- Datalist -->
 <div id="datalist-container"></div>
 
 <script>
-/* ======== KREDENSIAL SUDAH TERISI ======== */
 var SUPABASE_URL        = 'https://qdzxpvsgdhoqqxdvhyny.supabase.co';
 var SUPABASE_ANON_KEY   = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFkenhwdnNnZGhvcXF4ZHZoeW55Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ3NzU0MjEsImV4cCI6MjA5MDM1MTQyMX0.Wy4Fxb--vEf568w2pq23e4Rtj2o7P7hh3k_p3Kl7x7E';
 var ADMIN_WA_NUMBER     = '62881082928759';
 var EMAILJS_PUBLIC_KEY  = 'dw-_wRpDzY6m3UoxE';
 var EMAILJS_SERVICE_ID  = 'service_49ymghg';
 var EMAILJS_TEMPLATE_ID = 'template_c17dmq6';
-/* ========================================== */
 
 var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 emailjs.init(EMAILJS_PUBLIC_KEY);
@@ -351,7 +265,6 @@ var FIELDS = [
 ];
 var CARD_FIELDS = ['nomor_urut_pendaftaran','nopol','penanggung_jawab','merk','tipe','tahun_pembuatan'];
 
-/* ============ UTILITAS ============ */
 function toast(msg, type) {
   type = type || 'info';
   var box = document.getElementById('toast-box');
@@ -394,7 +307,6 @@ function fetchIP() {
     .catch(function(){ currentIP = 'unknown'; });
 }
 
-/* ============ 2FA PIN ============ */
 function generatePIN() { return String(Math.floor(10000 + Math.random() * 90000)); }
 
 function sendPINEmail(email, pin) {
@@ -405,7 +317,6 @@ function initiate2FA() {
   if (!currentUser) return;
   var pin = generatePIN();
   var expiresAt = new Date(Date.now() + 5 * 60 * 1000).toISOString();
-
   sb.from('login_pins').delete().eq('user_id', currentUser.id).then(function() {
     return sb.from('login_pins').insert({ user_id: currentUser.id, pin: pin, expires_at: expiresAt }).select().single();
   }).then(function(result) {
@@ -430,8 +341,7 @@ function initiate2FA() {
 }
 
 function setupPinInputs() {
-  var c = document.getElementById('pin-inputs');
-  c.innerHTML = '';
+  var c = document.getElementById('pin-inputs'); c.innerHTML = '';
   for (var i = 0; i < 5; i++) {
     var inp = document.createElement('input');
     inp.type = 'text'; inp.inputMode = 'numeric'; inp.maxLength = 1;
@@ -485,7 +395,6 @@ function verifyPIN() {
   if (entered.length !== 5) return;
   isVerifying = true;
   document.getElementById('pin-info').innerHTML = '<span class="spin-load"></span> Memverifikasi...';
-
   sb.from('login_pins').select('*').eq('id', pendingPinId).single().then(function(result) {
     var pinData = result.data;
     if (!pinData) { showPinError('Sesi PIN tidak valid. Silakan login ulang.'); isVerifying=false; return; }
@@ -537,13 +446,13 @@ function cancelPIN() {
 }
 
 /* ============ AUTENTIKASI ============ */
+
 function doLogin() {
   var email = document.getElementById('login-email').value.trim();
   var pass = document.getElementById('login-pass').value;
   if (!email || !pass) return toast('Isi email dan password','err');
   var btn = document.getElementById('btn-login');
   btn.disabled = true; btn.textContent = 'Memproses...';
-
   sb.auth.signInWithPassword({ email: email, password: pass }).then(function(result) {
     btn.disabled = false; btn.textContent = 'MASUK';
     if (result.error) return toast(result.error.message, 'err');
@@ -564,26 +473,26 @@ function doRegister() {
   var pass = document.getElementById('reg-pass').value;
   if (!email || !pass) return toast('Isi email dan password','err');
   if (pass.length < 6) return toast('Password minimal 6 karakter','err');
+  var btn = document.getElementById('btn-reg');
+  btn.disabled = true; btn.textContent = 'Memproses...';
 
   sb.auth.signUp({ email: email, password: pass }).then(function(result) {
-    if (result.error) return toast(result.error.message, 'err');
-    // Setelah signup berhasil, user otomatis login (karena email confirmation dimatikan)
-    // Sekarang buat profil manual
+    if (result.error) { btn.disabled=false; btn.textContent='DAFTAR'; return toast(result.error.message, 'err'); }
+    var userId = result.data.user.id;
     var isAdmin = email === 'adeali490@gmail.com';
     return sb.from('profiles').insert({
-      id: result.data.user.id,
+      id: userId,
       email: email,
       role: isAdmin ? 'admin' : 'user',
       is_active: isAdmin ? true : false
     });
   }).then(function(result) {
+    btn.disabled = false; btn.textContent = 'DAFTAR';
     if (result && result.error) {
-      console.error('Gagal buat profil:', result.error);
-      toast('Akun terbuat tapi profil gagal dibuat. Hubungi Admin.','err');
+      toast('Gagal buat profil: ' + result.error.message, 'err');
     } else {
       toast('Registrasi berhasil, silakan login','ok');
     }
-    // Logout otomatis, arahkan ke halaman login
     sb.auth.signOut();
     showPage('page-login');
   });
@@ -771,7 +680,6 @@ function clearFilters() {
   applyFilters();
 }
 
-/* ============ SPINNER NAVIGATION ============ */
 function spinnerNav(type, dir) {
   var list = type === 'nopol' ? allNopolValues : allNomorUrutValues;
   var inputId = type === 'nopol' ? 'f-nopol' : 'f-nomor-urut';
@@ -800,7 +708,6 @@ function fillFormFromEntry(entry) {
   }
 }
 
-/* ============ ENTRY FORM ============ */
 function generateEntryForm() {
   var html = '';
   for (var i = 0; i < FIELDS.length; i++) {
@@ -825,7 +732,6 @@ function onDateMulaiChange() {
   document.getElementById('ef-tanggal_berakhir').value = toInputDate(d);
 }
 
-/* ============ SIMPAN KE ANTRIAN ============ */
 function simpanKeAntrian() {
   var nu = document.getElementById('ef-nomor_urut_pendaftaran').value.trim();
   if (!nu) return toast('Nomor Urut Pendaftaran wajib diisi', 'err');
@@ -843,7 +749,6 @@ function simpanKeAntrian() {
   });
 }
 
-/* ============ PRINT QUEUE ============ */
 function loadPrintQueue() {
   printQueueData = [];
   for (var i = 0; i < allEntries.length; i++) { if (!(allEntries[i].stck_printed && allEntries[i].form_printed)) printQueueData.push(allEntries[i]); }
@@ -889,19 +794,16 @@ function removeFromQueue(entryId) {
   });
 }
 
-/* ============ PRINT LAYOUT STCK ============ */
 function generateSTCKLayout(e) {
   function r(l, v) { return '<div class="stck-row"><span class="lbl">' + l + '</span><span class="stck-val">' + (v || '-') + '</span></div>'; }
   return '<div class="stck-layout"><div class="stck-header">SURAT TANDA CEK<br>KENDARAAN (STCK)</div>' + r('No. Urut', e.nomor_urut_pendaftaran) + r('NOPOL', e.nopol) + '<div class="stck-sep"></div><div style="font-weight:bold;margin-bottom:1mm">Penanggung Jawab:</div>' + r('', e.penanggung_jawab) + r('Alamat PJ', e.alamat_penanggung_jawab) + '<div class="stck-sep"></div>' + r('Alamat Badan Usaha', e.alamat_badan_usaha) + r('Kode Lokasi', e.kode_lokasi) + '<div class="stck-sep"></div><div style="font-weight:bold;margin-bottom:1mm">Masa Laku:</div>' + r('Dari', formatDate(e.tanggal_mulai)) + r('Sampai', formatDate(e.tanggal_berakhir)) + '<div class="stck-sep"></div><div style="font-weight:bold;margin-bottom:1mm">Data Kendaraan:</div>' + r('Merk', e.merk) + r('Tipe', e.tipe) + r('Jenis', e.jenis) + r('Model', e.model) + r('Tahun', e.tahun_pembuatan) + r('Isi Silinder', e.isi_silinder) + r('No. Rangka', e.nomor_rangka) + r('No. Mesin', e.nomor_mesin) + r('Bahan Bakar', e.bahan_bakar) + r('Warna', e.warna) + '<div class="stck-sep"></div>' + r('Tujuan Penggunaan', e.tujuan_penggunaan) + r('Asal', e.asal) + r('Tujuan', e.tujuan) + '<div class="stck-sep"></div><div style="text-align:center;margin-top:3mm;font-size:9px">Dicetak: ' + new Date().toLocaleString('id-ID') + '</div></div>';
 }
 
-/* ============ PRINT LAYOUT FORM ============ */
 function generateFORMLayout(e) {
   function p(l, v) { return '<div class="form-pair"><span class="flbl">' + l + '</span><span class="fval">' + (v || '-') + '</span></div>'; }
   return '<div class="form-layout"><div class="form-header">FORM ENTRY STCK</div>' + p('No.Urut', e.nomor_urut_pendaftaran) + p('NOPOL', e.nopol) + '<div class="form-hr"></div><div class="form-section-title">PENANGGUNG JAWAB</div>' + p('Nama', e.penanggung_jawab) + p('Al.PJ', e.alamat_penanggung_jawab) + p('Al.BU', e.alamat_badan_usaha) + p('Kode', e.kode_lokasi) + '<div class="form-hr"></div><div class="form-section-title">MASA LAKU</div>' + p('Mulai', formatDate(e.tanggal_mulai)) + p('Sampai', formatDate(e.tanggal_berakhir)) + '<div class="form-hr"></div><div class="form-section-title">KENDARAAN</div>' + p('Merk', e.merk) + p('Tipe', e.tipe) + p('Jenis', e.jenis) + p('Model', e.model) + p('Tahun', e.tahun_pembuatan) + p('Isi Sil.', e.isi_silinder) + p('No.Rangka', e.nomor_rangka) + p('No.Mesin', e.nomor_mesin) + p('BBM', e.bahan_bakar) + p('Warna', e.warna) + '<div class="form-hr"></div>' + p('Tujuan', e.tujuan_penggunaan) + p('Asal', e.asal) + p('Tujuan', e.tujuan) + '<div class="form-hr"></div><div style="text-align:center;font-size:8px;margin-top:1mm">Dicetak: ' + new Date().toLocaleString('id-ID') + '</div></div>';
 }
 
-/* ============ ADMIN KELOLA USER ============ */
 function loadAdminUsers() {
   if (!currentUser || currentUser.role !== 'admin') return;
   sb.from('profiles').select('*').order('created_at', { ascending: false }).then(function(result) {
@@ -933,7 +835,6 @@ function promoteToAdmin(userId) {
   });
 }
 
-/* ============ ADMIN HISTORI ============ */
 function hideFromUser(entryId) {
   sb.from('entries').update({ hidden_from_user: true }).eq('id', entryId).then(function(result) {
     if (result.error) toast('Gagal menyembunyikan', 'err'); else toast('Disembunyikan dari User', 'ok'); loadAllData();
@@ -947,7 +848,6 @@ function deleteEntry(entryId) {
   });
 }
 
-/* ============ EXPORT ============ */
 function exportSheet() {
   var entries = getFilteredEntries();
   if (!entries.length) return toast('Tidak ada data untuk di-export', 'err');
@@ -973,14 +873,12 @@ function exportSheet() {
   toast('File Excel berhasil diunduh', 'ok');
 }
 
-/* ============ EVENT LISTENERS ============ */
 document.getElementById('f-date-from').addEventListener('change', applyFilters);
 document.getElementById('f-date-to').addEventListener('change', applyFilters);
 document.getElementById('login-pass').addEventListener('keydown', function(e) { if (e.key === 'Enter') doLogin(); });
 document.getElementById('login-email').addEventListener('keydown', function(e) { if (e.key === 'Enter') doLogin(); });
 document.getElementById('reg-pass').addEventListener('keydown', function(e) { if (e.key === 'Enter') doRegister(); });
 
-/* ============ INISIALISASI ============ */
 generateEntryForm();
 
 sb.auth.getSession().then(function(result) {

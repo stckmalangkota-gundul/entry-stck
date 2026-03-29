@@ -28,7 +28,7 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
 
 /* Spinner */
 .spinner-btn{display:inline-flex;align-items:center;border:1px solid #D4C5B3;border-radius:8px;overflow:hidden;background:#fff}
-.spinner-btn input{border:none;outline:none;text-align:center;font-family:Arial,sans-serif;font-size:14px;font-weight:700;padding:8px 4px;min-width:100px;background:transparent}
+.spinner-btn input { border:none; outline:none; text-align:center; font-family:Arial,sans-serif; font-size:14px; font-weight:700; padding:8px 4px; min-width:100px; background:transparent; text-transform:none; }
 .spinner-btn button{border:none;background:#F5EDE4;padding:8px 12px;cursor:pointer;font-size:18px;line-height:1;transition:background .15s}
 .spinner-btn button:hover{background:#E8DDD0}.spinner-btn button:active{background:#D4C5B3}
 
@@ -43,7 +43,11 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
 .scroll-h::-webkit-scrollbar{height:6px}.scroll-h::-webkit-scrollbar-thumb{background:#D4C5B3;border-radius:3px}
 
 /* Input global */
-.inp{width:100%;padding:10px 12px;border:1px solid #D4C5B3;border-radius:8px;font-family:Arial,sans-serif;font-size:14px;background:#fff;text-transform:uppercase;outline:none;transition:border-color .2s}
+.inp { width:100%; padding:10px 12px; border:1px solid #D4C5B3; border-radius:8px; font-family:Arial,sans-serif;
+    font-size:14px; background:#fff; outline:none; transition:border-color .2s; }
+/* Hanya input di dalam section Entry Form yang kapital */
+#entry-form-fields .inp,
+#entry-form-fields .spinner-btn input { text-transform: uppercase; }
 .inp:focus{border-color:#8B5E3C}
 .inp-label{font-size:11px;font-weight:600;color:#6B4226;margin-bottom:4px;display:block;letter-spacing:.3px}
 .inp[readonly]{background:#F5EDE4;cursor:default}
@@ -69,7 +73,7 @@ body{font-family:'Poppins',sans-serif;background:#FFF8F0;color:#1A1A1A;margin:0}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
 
 /* PIN inputs */
-.pin-box{width:48px;height:58px;text-align:center;font-size:24px;font-weight:800;font-family:Arial,sans-serif;border:2px solid #D4C5B3;border-radius:12px;outline:none;background:#fff;transition:all .2s;color:#2D1B0E}
+.pin-box{width:48px;height:58px;text-align:center;font-size:24px;font-weight:800;font-family:Arial,sans-serif;border:2px solid #D4C5B3;border-radius:12px;outline:none;background:#fff;transition:all .2s;color:#2D1B0E;text-transform:none}
 .pin-box:focus{border-color:#6B4226;box-shadow:0 0 0 3px rgba(107,66,38,.15)}
 .pin-box.error{border-color:#C1292E;animation:shake .4s ease}
 @keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}

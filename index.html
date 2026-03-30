@@ -454,38 +454,54 @@ function doLogin() {
   var btn = document.getElementById('btn-login');
   btn.disabled = true; btn.textContent = 'Memproses...';
 
-  sb.auth.signInWithPassword({ email: email, password: pass })
-    .then(function(loginResult) {
-      if (loginResult.error) {
-        btn.disabled = false; btn.textContent = 'MASUK';
-        return toast(loginResult.error.message, 'err');
-      }
-      var session = loginResult.data.session;
-      var userId = session.user.id;
-      var token = session.access_token;
-      return fetch(SUPABASE_URL + '/rest/v1/profiles?id=eq.' + userId + '&select=*', {
-        headers: {
-          'apikey': SUPABASE_ANON_KEY,
-          'Authorization': 'Bearer ' + token,
-          'Content-Type': 'application/json'
-        }
-      }).then(function(r) { return r.json(); });
+  fetch(SUPABASE_URL + '/auth/v1/token?grant_type=password', {
+    method: 'POST',
+    headers: { 'apikey': SUPABASE_ANON_KEY, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, password: pass })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(authData) {
+    if (authData.error) {
+      btn.disabled = false; btn.textContent = 'MASUK';
+      return toast(authData.msg || 'Login gagal','err');
+    }
+    var token = authData.access_token;
+    var userId = authData.user.id;
+
+    return fetch(SUPABASE_URL + '/rest/v1/rpc/get_profile_by_id', {
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': 'Bearer ' + token,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ p_id: userId })
     })
+    .then(function(r) { return r.json(); })
     .then(function(profileData) {
-      btn.disabled = false; btn.textContent = 'MASUK';
-      if (!profileData || !Array.isArray(profileData) || !profileData.length) {
-        toast('Profil tidak ditemukan. Coba daftar ulang.','err');
-        sb.auth.signOut();
-        return;
-      }
-      currentUser = profileData[0];
-      toast('Login berhasil, cek email untuk PIN','info');
-      initiate2FA();
-    })
-    .catch(function() {
-      btn.disabled = false; btn.textContent = 'MASUK';
-      toast('Terjadi kesalahan saat login','err');
+      return sb.auth.setSession({
+        access_token: token,
+        refresh_token: authData.refresh_token
+      }).catch(function() {}).then(function() {
+        return profileData;
+      });
     });
+  })
+  .then(function(profileData) {
+    btn.disabled = false; btn.textContent = 'MASUK';
+    if (!profileData || !profileData.id) {
+      toast('Profil tidak ditemukan. Coba daftar ulang.','err');
+      sb.auth.signOut();
+      return;
+    }
+    currentUser = profileData;
+    toast('Login berhasil, cek email untuk PIN','info');
+    initiate2FA();
+  })
+  .catch(function(err) {
+    btn.disabled = false; btn.textContent = 'MASUK';
+    toast('Error: ' + (err.message || 'Login gagal'),'err');
+  });
 }
 
 function doRegister() {
@@ -501,20 +517,15 @@ function doRegister() {
     var userId = result.data.user.id;
     var isAdmin = email === 'adeali490@gmail.com';
     return sb.from('profiles').insert({
-      id: userId,
-      email: email,
+      id: userId, email: email,
       role: isAdmin ? 'admin' : 'user',
       is_active: isAdmin ? true : false
     });
   }).then(function(result) {
     btn.disabled = false; btn.textContent = 'DAFTAR';
-    if (result && result.error) {
-      toast('Gagal buat profil: ' + result.error.message, 'err');
-    } else {
-      toast('Registrasi berhasil, silakan login','ok');
-    }
-    sb.auth.signOut();
-    showPage('page-login');
+    if (result && result.error) toast('Gagal buat profil: ' + result.error.message, 'err');
+    else toast('Registrasi berhasil, silakan login','ok');
+    sb.auth.signOut().then(function() { showPage('page-login'); });
   });
 }
 

@@ -453,18 +453,26 @@ function doLogin() {
   if (!email || !pass) return toast('Isi email dan password','err');
   var btn = document.getElementById('btn-login');
   btn.disabled = true; btn.textContent = 'Memproses...';
+
   sb.auth.signInWithPassword({ email: email, password: pass }).then(function(result) {
-    btn.disabled = false; btn.textContent = 'MASUK';
-    if (result.error) return toast(result.error.message, 'err');
-    return sb.auth.getUser();
-  }).then(function(result) {
-    if (!result || !result.data) return;
+    if (result.error) {
+      btn.disabled = false; btn.textContent = 'MASUK';
+      return toast(result.error.message, 'err');
+    }
     return sb.from('profiles').select('*').eq('id', result.data.user.id).single();
   }).then(function(result) {
-    if (!result || !result.data) { toast('Profil tidak ditemukan','err'); sb.auth.signOut(); return; }
+    btn.disabled = false; btn.textContent = 'MASUK';
+    if (!result || !result.data) {
+      toast('Profil tidak ditemukan. Coba daftar ulang.','err');
+      sb.auth.signOut();
+      return;
+    }
     currentUser = result.data;
     toast('Login berhasil, cek email untuk PIN','info');
     initiate2FA();
+  }).catch(function(err) {
+    btn.disabled = false; btn.textContent = 'MASUK';
+    toast('Gagal login','err');
   });
 }
 

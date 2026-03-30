@@ -564,24 +564,34 @@ function afterAuth() {
 function continueAfterAuth() {
   var profile = currentUser;
   document.getElementById('user-email-display').textContent = profile.email;
-  fetchIP().then(function() { return sb.rpc('set_my_ip', { p_ip: currentIP }).catch(function(){}); }).then(function() {
-    showPage('page-entry');
-    if (profile.role === 'admin') {
-      document.getElementById('role-badge').classList.remove('hidden');
-      document.getElementById('btn-export').classList.remove('hidden');
-      document.getElementById('sec-admin').classList.remove('hidden');
-      showActiveContent(); loadAdminUsers();
+
+  showPage('page-entry');
+
+  if (profile.role === 'admin') {
+    document.getElementById('role-badge').classList.remove('hidden');
+    document.getElementById('btn-export').classList.remove('hidden');
+    document.getElementById('sec-admin').classList.remove('hidden');
+    showActiveContent();
+    loadAdminUsers();
+  } else {
+    document.getElementById('role-badge').classList.add('hidden');
+    document.getElementById('btn-export').classList.add('hidden');
+    document.getElementById('sec-admin').classList.add('hidden');
+    if (profile.is_active) {
+      showActiveContent();
     } else {
-      document.getElementById('role-badge').classList.add('hidden');
-      document.getElementById('btn-export').classList.add('hidden');
-      document.getElementById('sec-admin').classList.add('hidden');
-      if (profile.is_active) { showActiveContent(); }
-      else { showInactiveNotice(); subscribeActivation(); return; }
+      showInactiveNotice();
+      subscribeActivation();
+      fetchIP();
+      return;
     }
-    loadAllData();
+  }
+
+  loadAllData();
+  fetchIP().then(function() {
+    sb.rpc('set_my_ip', { p_ip: currentIP }).catch(function(){});
   });
 }
-
 function showInactiveNotice() {
   document.getElementById('notice-inactive').classList.remove('hidden');
   document.getElementById('content-active').classList.add('hidden');

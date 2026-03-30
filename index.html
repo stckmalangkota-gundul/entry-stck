@@ -460,28 +460,25 @@ function doLogin() {
         btn.disabled = false; btn.textContent = 'MASUK';
         return toast(loginResult.error.message, 'err');
       }
-      return new Promise(function(resolve) { setTimeout(resolve, 500); });
+      var session = loginResult.data.session;
+      var userId = session.user.id;
+      var token = session.access_token;
+      return fetch(SUPABASE_URL + '/rest/v1/profiles?id=eq.' + userId + '&select=*', {
+        headers: {
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': 'Bearer ' + token,
+          'Content-Type': 'application/json'
+        }
+      }).then(function(r) { return r.json(); });
     })
-    .then(function() {
-      return sb.auth.getSession();
-    })
-    .then(function(sessionResult) {
-      if (!sessionResult || !sessionResult.data.session) {
-        btn.disabled = false; btn.textContent = 'MASUK';
-        return toast('Sesi tidak valid, coba lagi','err');
-      }
-      var userId = sessionResult.data.session.user.id;
-      return sb.from('profiles').select('*').eq('id', userId).maybeSingle();
-    })
-    .then(function(profileResult) {
-      if (!profileResult) return;
+    .then(function(profileData) {
       btn.disabled = false; btn.textContent = 'MASUK';
-      if (!profileResult.data) {
+      if (!profileData || !Array.isArray(profileData) || !profileData.length) {
         toast('Profil tidak ditemukan. Coba daftar ulang.','err');
         sb.auth.signOut();
         return;
       }
-      currentUser = profileResult.data;
+      currentUser = profileData[0];
       toast('Login berhasil, cek email untuk PIN','info');
       initiate2FA();
     })

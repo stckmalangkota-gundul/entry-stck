@@ -326,17 +326,28 @@ function initiate2FA() {
     showPage('page-pin');
     setupPinInputs();
     document.getElementById('pin-error').classList.add('hidden');
-    document.getElementById('pin-info').innerHTML = '<span class="spin-load"></span> Mengirim PIN...';
+
+    /* SEMENTARA: tampilkan PIN di halaman sebagai fallback */
+    document.getElementById('pin-info').innerHTML = 'PIN Anda: <span style="font-size:28px;font-weight:900;letter-spacing:8px;color:#6B4226">' + pin + '</span>';
+
     return sendPINEmail(currentUser.email, pin);
   }).then(function(result) {
+    var debugBox = document.getElementById('pin-info');
     if (result && result.status === 200) {
-      document.getElementById('pin-info').textContent = 'PIN dikirim ke ' + currentUser.email;
+      debugBox.innerHTML = debugBox.innerHTML + '<br><span style="color:#2D6A4F;font-size:12px">Email terkirim ke ' + currentUser.email + '</span>';
       startResendCooldown();
     } else {
-      document.getElementById('pin-info').innerHTML = '<span class="text-red-600 font-semibold">Gagal mengirim email. Periksa konfigurasi EmailJS.</span>';
+      var errMsg = 'Gagal kirim email.';
+      if (result && result.text) errMsg += ' Detail: ' + result.text;
+      debugBox.innerHTML = debugBox.innerHTML + '<br><span style="color:#C1292E;font-size:12px">' + errMsg + '</span>';
       var btn = document.getElementById('btn-resend-pin');
       btn.classList.remove('hidden'); btn.disabled = false; btn.innerHTML = 'Kirim Ulang PIN';
     }
+  }).catch(function(err) {
+    var debugBox = document.getElementById('pin-info');
+    debugBox.innerHTML = debugBox.innerHTML + '<br><span style="color:#C1292E;font-size:12px">Error: ' + (err.message || err.text || 'Tidak diketahui') + '</span>';
+    var btn = document.getElementById('btn-resend-pin');
+    btn.classList.remove('hidden'); btn.disabled = false; btn.innerHTML = 'Kirim Ulang PIN';
   });
 }
 

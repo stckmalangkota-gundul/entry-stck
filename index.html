@@ -427,7 +427,7 @@ function verifyPIN() {
       if (resendInterval) { clearInterval(resendInterval); resendInterval=null; }
       isVerifying = false;
       toast('Verifikasi berhasil','ok');
-      afterAuth();
+      continueAfterAuth();
     });
   });
 }
